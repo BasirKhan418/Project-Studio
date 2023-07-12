@@ -103,10 +103,10 @@ const Navbar = ({
         </div>
 
         {/* <AiOutlineShoppingCart className="text-3xl md:text-xl"/> */}
-        <div className="cart absolute right-4 top-6 mx-5 flex justify-center">
+        <div className="cart absolute right-4 top-6 mx-5 flex justify-center items-center">
           
-          <Link href={"/rooms"}><button className="text-black border-solid border-2 border-blue-600 px-2 p-2 font-semibold rounded-3xl h-10 w-40 hover:bg-blue-600 hover:text-white hidden lg:block">Sign Up</button></Link>
-          <Link href={"/rooms"}><button className="text-white px-2 p-2 font-semibold mx-2 bg-blue-600 rounded-3xl h-10 w-40 hover:bg-white hover:text-black hidden lg:block border-solid border-2 border-blue-600 ">Login</button></Link>
+          <Link href={"/login"}><button className=" border-solid border-2 border-blue-600 px-2 p-2 bg-blue-600 text-white font-semibold rounded-3xl h-10 w-40 hover:bg-white hover:text-black hidden lg:block">Sign Up/Login</button></Link>
+          
             </div>
         {!sidebar&&<div
           className={`bg-white h-[60vh] px-8 py-10 transition-all
@@ -145,9 +145,7 @@ const Navbar = ({
               </li>
             </Link>
             <div className="cart mx-5 flex justify-center">
-          
-          <Link href={"/rooms"}><button className="text-black border-solid border-2 border-blue-600 px-2 p-2 font-semibold rounded-3xl h-10 w-40 hover:bg-blue-600 hover:text-white ">Sign Up</button></Link>
-          <Link href={"/rooms"}><button className="text-white px-2 p-2 font-semibold mx-2 bg-blue-600 rounded-3xl h-10 w-40 hover:bg-white hover:text-black border-solid border-2 border-blue-600">Login</button></Link>
+          <Link href={"/login"}><button className="text-white px-2 p-2 font-semibold mx-2 bg-blue-600 rounded-3xl h-10 w-40 hover:bg-white hover:text-black border-solid border-2 border-blue-600">Sign Up/Login</button></Link>
             </div>
             {/* <Link href={"/"}> <a><li>Tshirts</li></a></Link> */}
           </ul>

@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Link from 'next/link'
 const Footer = () => {
   return (
     <>
@@ -11,7 +11,7 @@ const Footer = () => {
             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Company</h2>
             <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                    <a href="#" className=" hover:underline">About</a>
+                    <Link href="/admin" className=" hover:underline">About</Link>
                 </li>
                 <li className="mb-4">
                     <a href="#" className="hover:underline">Careers</a>
@@ -48,7 +48,7 @@ const Footer = () => {
                     <a href="#" className="hover:underline">Privacy Policy</a>
                 </li>
                 <li className="mb-4">
-                    <a href="#" className="hover:underline">Licensing</a>
+                    <a href="" className="hover:underline">Licensing</a>
                 </li>
                 <li className="mb-4">
                     <a href="#" className="hover:underline">Terms &amp; Conditions</a>
