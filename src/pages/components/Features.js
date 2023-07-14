@@ -55,7 +55,7 @@ const Features = () => {
           </div>
           <div className="ml-4 grow">
             <p className="mb-1 font-bold">Support 24/7</p>
-            <p className="text-neutral-500 dark:text-neutral-300">
+            <p className="text-neutral-500 dark:text-black">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit.
               Nihil quisquam quibusdam modi sapiente magni molestias
               pariatur facilis reprehenderit facere aliquam ex.
@@ -75,7 +75,7 @@ const Features = () => {
           </div>
           <div className="ml-4 grow">
             <p className="mb-1 font-bold">Safe and solid</p>
-            <p className="text-neutral-500 dark:text-neutral-300">
+            <p className="text-neutral-500 dark:text-black">
               Eum nostrum fugit numquam, voluptates veniam neque quibusdam
               ullam aspernatur odio soluta, quisquam dolore animi mollitia a
               omnis praesentium, expedita nobis!
@@ -95,7 +95,7 @@ const Features = () => {
           </div>
           <div className="ml-4 grow">
             <p className="mb-1 font-bold">Extremely fast</p>
-            <p className="text-neutral-500 dark:text-neutral-300">
+            <p className="text-neutral-500 dark:text-black">
               Enim cupiditate, minus nulla dolor cumque iure eveniet facere
               ullam beatae hic voluptatibus dolores exercitationem? Facilis
               debitis aspernatur amet nisi iure eveniet facere?
@@ -115,7 +115,7 @@ const Features = () => {
           </div>
           <div className="ml-4 grow">
             <p className="mb-1 font-bold">Live analytics</p>
-            <p className="text-neutral-500 dark:text-neutral-300">
+            <p className="text-neutral-500 dark:text-black">
               Illum doloremque ea, blanditiis sed dolor laborum praesentium
               maxime sint, consectetur atque ipsum ab adipisci ullam
               aspernatur odio soluta, quisquam dolore

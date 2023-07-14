@@ -3,16 +3,16 @@ import React from 'react'
 const Services = () => {
   return (
     <>
-      <section class="pt-6">
-   <div class="container">
-      <div class="flex flex-wrap">
-         <div class="w-full px-4">
-            <div class="text-center mx-auto mb-12 lg:mb-20 ">
-               <span class="font-bold text-lg text-primary mb-2  ">
+      <section className="pt-6">
+   <div className="container">
+      <div className="flex flex-wrap">
+         <div className="w-full px-4">
+            <div className="text-center mx-auto mb-12 lg:mb-20 ">
+               <span className="font-bold text-lg text-primary mb-2  ">
                Our Services
                </span>
                <h2
-                  class="
+                  className="
                   font-bold
                   text-3xl
                   sm:text-4xl
@@ -24,17 +24,17 @@ const Services = () => {
                   >
                   What We Offer
                </h2>
-               <p class="text-base text-body-color p-2">
+               <p className="text-base text-body-color p-2">
                   There are many variations of passages of Lorem Ipsum available
                   but the majority have suffered alteration in some form.
                </p>
             </div>
          </div>
       </div>
-      <div class="flex flex-wrap  ">
-         <div class="w-full md:w-1/2 lg:w-1/3 px-4 ">
+      <div className="flex flex-wrap  ">
+         <div className="w-full md:w-1/2 lg:w-1/3 px-4 ">
             <div
-               class="
+               className="
                p-10
                md:px-7
                xl:px-10
@@ -52,7 +52,7 @@ const Services = () => {
                "
                >
                <div
-                  class="
+                  className="
                   w-[70px]
                   h-[70px]
                   flex
@@ -77,18 +77,18 @@ const Services = () => {
                         />
                   </svg>
                </div>
-               <h4 class="font-semibold text-xl text-dark mb-3">
+               <h4 className="font-semibold text-xl text-dark mb-3">
                   Refreshing Design
                </h4>
-               <p class="text-body-color">
+               <p className="text-body-color">
                   We dejoy working with discerning clients, people for whom
                   qualuty, service, integrity & aesthetics.
                </p>
             </div>
          </div>
-         <div class="w-full md:w-1/2 lg:w-1/3 px-4">
+         <div className="w-full md:w-1/2 lg:w-1/3 px-4">
             <div
-               class="
+               className="
                p-10
                md:px-7
                xl:px-10
@@ -106,7 +106,7 @@ const Services = () => {
                "
                >
                <div
-                  class="
+                  className="
                   w-[70px]
                   h-[70px]
                   flex
@@ -138,18 +138,18 @@ const Services = () => {
                         />
                   </svg>
                </div>
-               <h4 class="font-semibold text-xl text-dark mb-3">
+               <h4 className="font-semibold text-xl text-dark mb-3">
                   Based on Tailwind CSS
                </h4>
-               <p class="text-body-color">
+               <p className="text-body-color">
                   We dejoy working with discerning clients, people for whom
                   qualuty, service, integrity & aesthetics.
                </p>
             </div>
          </div>
-         <div class="w-full md:w-1/2 lg:w-1/3 px-4">
+         <div className="w-full md:w-1/2 lg:w-1/3 px-4">
             <div
-               class="
+               className="
                p-10
                md:px-7
                xl:px-10
@@ -167,7 +167,7 @@ const Services = () => {
                "
                >
                <div
-                  class="
+                  className="
                   w-[70px]
                   h-[70px]
                   flex
@@ -204,18 +204,18 @@ const Services = () => {
                         />
                   </svg>
                </div>
-               <h4 class="font-semibold text-xl text-dark mb-3">
+               <h4 className="font-semibold text-xl text-dark mb-3">
                   300+ Components
                </h4>
-               <p class="text-body-color">
+               <p className="text-body-color">
                   We dejoy working with discerning clients, people for whom
                   qualuty, service, integrity & aesthetics.
                </p>
             </div>
          </div>
-         <div class="w-full md:w-1/2 lg:w-1/3 px-4">
+         <div className="w-full md:w-1/2 lg:w-1/3 px-4">
             <div
-               class="
+               className="
                p-10
                md:px-7
                xl:px-10
@@ -233,7 +233,7 @@ const Services = () => {
                "
                >
                <div
-                  class="
+                  className="
                   w-[70px]
                   h-[70px]
                   flex
@@ -270,18 +270,18 @@ const Services = () => {
                         />
                   </svg>
                </div>
-               <h4 class="font-semibold text-xl text-dark mb-3">
+               <h4 className="font-semibold text-xl text-dark mb-3">
                   Speed Optimized
                </h4>
-               <p class="text-body-color">
+               <p className="text-body-color">
                   We dejoy working with discerning clients, people for whom
                   qualuty, service, integrity & aesthetics.
                </p>
             </div>
          </div>
-         <div class="w-full md:w-1/2 lg:w-1/3 px-4">
+         <div className="w-full md:w-1/2 lg:w-1/3 px-4">
             <div
-               class="
+               className="
                p-10
                md:px-7
                xl:px-10
@@ -299,7 +299,7 @@ const Services = () => {
                "
                >
                <div
-                  class="
+                  className="
                   w-[70px]
                   h-[70px]
                   flex
@@ -324,18 +324,18 @@ const Services = () => {
                         />
                   </svg>
                </div>
-               <h4 class="font-semibold text-xl text-dark mb-3">
+               <h4 className="font-semibold text-xl text-dark mb-3">
                   Fully Customizable
                </h4>
-               <p class="text-body-color">
+               <p className="text-body-color">
                   We dejoy working with discerning clients, people for whom
                   qualuty, service, integrity & aesthetics.
                </p>
             </div>
          </div>
-         <div class="w-full md:w-1/2 lg:w-1/3 px-4">
+         <div className="w-full md:w-1/2 lg:w-1/3 px-4">
             <div
-               class="
+               className="
                p-10
                md:px-7
                xl:px-10
@@ -353,7 +353,7 @@ const Services = () => {
                "
                >
                <div
-                  class="
+                  className="
                   w-[70px]
                   h-[70px]
                   flex
@@ -382,10 +382,10 @@ const Services = () => {
                         />
                   </svg>
                </div>
-               <h4 class="font-semibold text-xl text-dark mb-3">
+               <h4 className="font-semibold text-xl text-dark mb-3">
                   Regular Updates
                </h4>
-               <p class="text-body-color">
+               <p className="text-body-color">
                   We dejoy working with discerning clients, people for whom
                   qualuty, service, integrity & aesthetics.
                </p>

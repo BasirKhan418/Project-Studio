@@ -30,7 +30,7 @@ const Navbar = ({
   return (
     <>
       <div
-        className={` Navbar flex flex-col lg:flex-row  justify-start md:justify-start items-center py-2 shadow-md bg-white dark:bg-black dark:text-white text-black sticky top-0 z-10 dark:sticky dark:top:0 ${!sidebarham?"h-20":""} w-full ${
+        className={` Navbar flex flex-col lg:flex-row  justify-start md:justify-start items-center py-2 shadow-md bg-white dark:bg-black dark:text-white text-black sticky top-0 z-20 dark:sticky dark:top:0 ${!sidebarham?"h-20":""} w-full ${
           !sidebar && "overflow-hidden"
         }`}
       >
@@ -109,43 +109,43 @@ const Navbar = ({
           
             </div>
         {!sidebar&&<div
-          className={`bg-white h-[60vh]  py-10 px-8 transition-all
+          className={`bg-white h-[60vh]  py-10 px-8 transition-all dark:bg-black dark:text-white
           }`}
         >
-          <ul className="flex justify-center mx-4 items-center overflow-hidden whitespace-nowrap space-x-4 flex-col">
+          <ul className="flex justify-center mx-4 items-center overflow-hidden whitespace-nowrap space-x-4 flex-col ">
             <hr className="h-2 w-full" />
             <Link href={"/"}>
               {" "}
-              <li className="text-lg my-2 font-semibold hover:bg-amber-100 hover:rounded transition duration-150 ease-out hover:ease-in dark:text-black">
+              <li onClick={()=>{setSidebarham(false)}} className="text-lg my-2 font-semibold hover:bg-blue-100 hover:rounded transition duration-150 ease-out hover:ease-in dark:text-white" >
                 Home
               </li>
             </Link>
             <Link href={"/rooms"}>
               {" "}
-              <li className=" dark:text-black text-lg my-2 font-semibold hover:bg-amber-100 hover:rounded transition duration-150 ease-out hover:ease-in lg:hidden">
+              <li onClick={()=>{setSidebarham(false)}} className=" dark:text-white text-lg my-2 font-semibold hover:bg-blue-100 hover:rounded transition duration-150 ease-out hover:ease-in lg:hidden">
                 Features
               </li>
             </Link>
             <Link href={"/foods"}>
               {" "}
-              <li className=" dark:text-black text-lg my-2 font-semibold  hover:bg-amber-100 hover:rounded transition duration-150 ease-out hover:ease-in lg:hidden">
+              <li onClick={()=>{setSidebarham(false)}} className=" dark:text-white text-lg my-2 font-semibold  hover:bg-blue-100 hover:rounded transition duration-150 ease-out hover:ease-in lg:hidden">
                 Pricing
               </li>
             </Link>
             <Link href={"/contactus"}>
               {" "}
-              <li className="dark:text-black text-lg my-2 font-semibold  hover:bg-amber-100 hover:rounded transition duration-150 ease-out hover:ease-in lg:hidden">
+              <li onClick={()=>{setSidebarham(false)}} className="dark:text-white text-lg my-2 font-semibold  hover:bg-blue-100 hover:rounded transition duration-150 ease-out hover:ease-in lg:hidden">
                About
               </li>
             </Link>
-            <Link href={"/contactus"}>
+            <Link onClick={()=>{setSidebarham(false)}} href={"/contactus"}>
               {" "}
-              <li className="dark:text-black text-lg my-2 font-semibold  hover:bg-amber-100 hover:rounded transition duration-150 ease-out hover:ease-in lg:hidden">
+              <li className="dark:text-white text-lg my-2 font-semibold  hover:bg-blue-100 hover:rounded transition duration-150 ease-out hover:ease-in lg:hidden" >
                Contact Us
               </li>
             </Link>
             <div className="cart mx-5 flex justify-center">
-          <Link href={"/login"}><button className="text-white px-2 p-2 font-semibold mx-2 bg-blue-600 rounded-3xl h-10 w-40 hover:bg-white hover:text-black border-solid border-2 border-blue-600">Log in</button></Link>
+          <Link href={"/login"}><button className="text-white px-2 p-2 font-semibold mx-2 bg-blue-600 rounded-3xl h-10 w-40 hover:bg-white hover:text-black border-solid border-2 border-blue-600" onClick={()=>{setSidebarham(false)}}>Log in</button></Link>
             </div>
             {/* <Link href={"/"}> <a><li>Tshirts</li></a></Link> */}
           </ul>
