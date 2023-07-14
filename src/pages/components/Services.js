@@ -5,10 +5,10 @@ const Services = () => {
     <>
       <section class="pt-6">
    <div class="container">
-      <div class="flex flex-wrap -mx-4">
+      <div class="flex flex-wrap">
          <div class="w-full px-4">
-            <div class="text-center mx-auto mb-12 lg:mb-20 max-w-[510px]">
-               <span class="font-bold text-lg text-primary mb-2 block ">
+            <div class="text-center mx-auto mb-12 lg:mb-20 ">
+               <span class="font-bold text-lg text-primary mb-2  ">
                Our Services
                </span>
                <h2
@@ -24,14 +24,14 @@ const Services = () => {
                   >
                   What We Offer
                </h2>
-               <p class="text-base text-body-color">
+               <p class="text-base text-body-color p-2">
                   There are many variations of passages of Lorem Ipsum available
                   but the majority have suffered alteration in some form.
                </p>
             </div>
          </div>
       </div>
-      <div class="flex flex-wrap -mx-2   ">
+      <div class="flex flex-wrap  ">
          <div class="w-full md:w-1/2 lg:w-1/3 px-4 ">
             <div
                class="

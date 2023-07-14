@@ -24,7 +24,7 @@ const Hero = () => {
                 Explore More
             </a> 
         </div>
-        <div className=" lg:mt-0 lg:col-span-5 lg:flex">
+        <div className=" lg:mt-0 lg:col-span-5 lg:flex mb-8">
             <img src="/pr2.png" alt="mockup" className='h-[50vh] w-[50vh]object-cover'/>
         </div>                
     </div>
