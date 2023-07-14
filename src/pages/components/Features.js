@@ -3,9 +3,9 @@ import React from 'react'
 const Features = () => {
   return (
     <>
-      <div className="container my-2 mx-auto md:px-12">
+      <div className="container my-4 mx-auto md:px-4">
   <section className="mb-2">
-    <h2 className="mb-12 text-center text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">
+    <h2 className="mb-12 text-center text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">
       Why is it so great?
     </h2>
 

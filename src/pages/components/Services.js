@@ -8,7 +8,7 @@ const Services = () => {
       <div class="flex flex-wrap -mx-4">
          <div class="w-full px-4">
             <div class="text-center mx-auto mb-12 lg:mb-20 max-w-[510px]">
-               <span class="font-bold text-lg text-primary mb-2 block text-blue-600">
+               <span class="font-bold text-lg text-primary mb-2 block ">
                Our Services
                </span>
                <h2
@@ -19,6 +19,7 @@ const Services = () => {
                   md:text-[40px]
                   text-dark
                   mb-4
+                  text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-950
                   "
                   >
                   What We Offer
@@ -30,8 +31,8 @@ const Services = () => {
             </div>
          </div>
       </div>
-      <div class="flex flex-wrap -mx-4">
-         <div class="w-full md:w-1/2 lg:w-1/3 px-4">
+      <div class="flex flex-wrap -mx-2   ">
+         <div class="w-full md:w-1/2 lg:w-1/3 px-4 ">
             <div
                class="
                p-10
@@ -43,6 +44,11 @@ const Services = () => {
                hover:shadow-lg
                mb-8
                mx-4
+               flex
+               flex-col
+               justify-center items-center
+               border-2
+               border-blue-200
                "
                >
                <div
@@ -92,6 +98,11 @@ const Services = () => {
                hover:shadow-lg
                mb-8
                mx-4
+               flex
+               flex-col
+               justify-center items-center
+               border-2
+               border-blue-200
                "
                >
                <div
@@ -113,7 +124,7 @@ const Services = () => {
                      viewBox="0 0 39 22"
                      fill="none"
                      xmlns="http://www.w3.org/2000/svg"
-                     >clip-rule
+                     >clipRule
                    
                      <path
                         fillRule="evenodd"
@@ -148,6 +159,11 @@ const Services = () => {
                hover:shadow-lg
                mb-8
                mx-4
+               flex
+               flex-col
+               justify-center items-center
+               border-2
+               border-blue-200
                "
                >
                <div
@@ -209,6 +225,11 @@ const Services = () => {
                hover:shadow-lg
                mb-8
                mx-4
+               flex
+               flex-col
+               justify-center items-center
+               border-2
+               border-blue-200
                "
                >
                <div
@@ -270,6 +291,11 @@ const Services = () => {
                hover:shadow-lg
                mb-8
                mx-4
+               flex
+               flex-col
+               justify-center items-center
+               border-2
+               border-blue-200
                "
                >
                <div
@@ -319,6 +345,11 @@ const Services = () => {
                hover:shadow-lg
                mb-8
                mx-4
+               flex
+               flex-col
+               justify-center items-center
+               border-2
+               border-blue-200
                "
                >
                <div
