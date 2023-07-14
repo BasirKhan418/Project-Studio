@@ -19,4 +19,21 @@
 body {
  
 }
-
+@media(max-width: 992px){
+ .res{
+ 
+  left: 100px;
+ }
+  }
+  @media(max-width: 862px){
+    .res{
+     
+     left: 70px;
+    }
+     }
+     @media(max-width: 798px){
+      .res{
+       
+       left: 20px;
+      }
+       }

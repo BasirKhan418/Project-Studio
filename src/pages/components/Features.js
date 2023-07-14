@@ -3,9 +3,9 @@ import React from 'react'
 const Features = () => {
   return (
     <>
-      <div className="container my-6 mx-auto md:px-12">
-  <section className="mb-6">
-    <h2 className="mb-12 text-center text-3xl font-bold ">
+      <div className="container my-2 mx-auto md:px-12">
+  <section className="mb-2">
+    <h2 className="mb-12 text-center text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">
       Why is it so great?
     </h2>
 
@@ -45,7 +45,7 @@ const Features = () => {
       <div className="w-full shrink-0 grow-0 basis-auto md:px-6 lg:w-7/12">
         <div className="mb-12 flex">
           <div className="shrink-0">
-            <div className="rounded-md bg-blue-600 p-4 shadow-lg dark:bg-blue-600 mx-4">
+            <div className="rounded-md bg-gradient-to-r from-cyan-500 to-blue-600 p-4 shadow-lg  mx-4">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2"
                 stroke="currentColor" className="h-6 w-6 text-white">
                 <path strokeLinecap="round" strokeLinejoin="round"
@@ -65,7 +65,7 @@ const Features = () => {
 
         <div className="mb-12 flex">
           <div className="shrink-0">
-            <div className="rounded-md bg-blue-600 p-4 shadow-lg dark:bg-blue-600 mx-4">
+            <div className="rounded-md bg-gradient-to-r from-cyan-500 to-blue-600 p-4 shadow-lg  mx-4">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2"
                 stroke="currentColor" className="h-6 w-6 text-white">
                 <path strokeLinecap="round" strokeLinejoin="round"
@@ -85,7 +85,7 @@ const Features = () => {
 
         <div className="mb-12 flex">
           <div className="shrink-0">
-            <div className="rounded-md bg-blue-600 p-4 shadow-lg dark:bg-blue-600 mx-4">
+            <div className="rounded-md bg-gradient-to-r from-cyan-500 to-blue-600 p-4 shadow-l mx-4">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2"
                 stroke="currentColor" className="h-6 w-6 text-white">
                 <path strokeLinecap="round" strokeLinejoin="round"
@@ -105,7 +105,7 @@ const Features = () => {
 
         <div className="flex">
           <div className="shrink-0">
-            <div className="rounded-md bg-blue-600 p-4 shadow-lg dark:bg-blue-600 mx-4">
+            <div className="rounded-md bg-gradient-to-r from-cyan-500 to-blue-600 p-4 shadow-lg  mx-4">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2"
                 stroke="currentColor" className="h-6 w-6 text-white">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />

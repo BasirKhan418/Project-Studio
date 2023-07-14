@@ -103,9 +103,9 @@ const Navbar = ({
         </div>
 
         {/* <AiOutlineShoppingCart className="text-3xl md:text-xl"/> */}
-        <div className="cart absolute right-4 top-6 mx-5 flex justify-center items-center">
+        <div className="cart absolute right-4 top-6 mx-5 ">
           
-          <Link href={"/login"}><button className=" border-solid border-2 border-blue-600 px-2 p-2 bg-blue-600 text-white font-semibold rounded-3xl h-10 w-40 hover:bg-white hover:text-black hidden lg:block">Sign Up/Login</button></Link>
+          <Link href={"/login"}><button className=" border-solid border-2 border-blue-600 px-2 p-2 bg-blue-600 text-white font-semibold rounded-3xl h-10 w-40 hover:bg-white hover:text-black hidden lg:block text-center">Log in </button></Link>
           
             </div>
         {!sidebar&&<div
