@@ -58,7 +58,7 @@ const Navbar = ({
             <div className="logo ml-auto flex flex-col md:justify-center justify-center items-center">
               <Image
                 alt="logo"
-                src="/cresentlogo.png"
+                src="/pr1.jpg"
                 width={150}
                 height={60}
               />
@@ -109,7 +109,7 @@ const Navbar = ({
           
             </div>
         {!sidebar&&<div
-          className={`bg-white h-[60vh] px-8 py-10 transition-all
+          className={`bg-white h-[60vh]  py-10 transition-all
           }`}
         >
           <ul className="flex justify-center mx-4 items-center overflow-hidden whitespace-nowrap space-x-4 flex-col">
@@ -145,7 +145,7 @@ const Navbar = ({
               </li>
             </Link>
             <div className="cart mx-5 flex justify-center">
-          <Link href={"/login"}><button className="text-white px-2 p-2 font-semibold mx-2 bg-blue-600 rounded-3xl h-10 w-40 hover:bg-white hover:text-black border-solid border-2 border-blue-600">Sign Up/Login</button></Link>
+          <Link href={"/login"}><button className="text-white px-2 p-2 font-semibold mx-2 bg-blue-600 rounded-3xl h-10 w-40 hover:bg-white hover:text-black border-solid border-2 border-blue-600">Log in</button></Link>
             </div>
             {/* <Link href={"/"}> <a><li>Tshirts</li></a></Link> */}
           </ul>
