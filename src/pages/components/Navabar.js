@@ -70,31 +70,31 @@ const Navbar = ({
             <hr className="h-2 w-full" />
             <Link href={"/"}>
               {" "}
-              <li className="text-lg my-2 font-semibold hover:bg-blue-100 hover:rounded transition duration-150 ease-out hover:ease-in ">
+              <li className="text-lg my-2 font-semibold hover:bg-blue-100 hover:text-black hover:rounded transition duration-150 ease-out hover:ease-in ">
                 Home
               </li>
             </Link>
             <Link href={"/rooms"}>
               {" "}
-              <li className="text-lg my-2 font-semibold hover:bg-blue-100 hover:rounded transition duration-150 ease-out hover:ease-in">
+              <li className="text-lg my-2 font-semibold hover:bg-blue-100 hover:text-black hover:rounded transition duration-150 ease-out hover:ease-in">
                 Features
               </li>
             </Link>
             <Link href={"/foods"}>
               {" "}
-              <li className="text-lg my-2 font-semibold  hover:bg-blue-100 hover:rounded transition duration-150 ease-out hover:ease-in">
+              <li className="text-lg my-2 font-semibold  hover:bg-blue-100 hover:text-black hover:rounded transition duration-150 ease-out hover:ease-in">
                 Pricing
               </li>
             </Link>
             <Link href={"/gallery"}>
               {" "}
-              <li className="text-lg my-2 font-semibold  hover:bg-blue-100 hover:rounded transition duration-150 ease-out hover:ease-in">
+              <li className="text-lg my-2 font-semibold  hover:bg-blue-100 hover:text-black hover:rounded transition duration-150 ease-out hover:ease-in">
                 About
               </li>
             </Link>
             <Link href={"/contactus"}>
               {" "}
-              <li className="text-lg my-2 font-semibold  hover:bg-blue-100 hover:rounded transition duration-150 ease-out hover:ease-in">
+              <li className="text-lg my-2 font-semibold  hover:bg-blue-100 hover:text-black hover:rounded transition duration-150 ease-out hover:ease-in">
                Contact Us
               </li>
             </Link>
