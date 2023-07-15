@@ -138,8 +138,8 @@ if(localStorage.getItem('token')){
   }
   return (
     <>
-    {loading?<Spinner/>:<div className=' min-h-screen bg-white'>
-      <div className="flex py-12 flex-col items-center justify-center sm:px-6 lg:px-8 bg-white">
+    {loading?<Spinner/>:<div className=" min-h-screen bg-[url('/loginbg.jpg')] object-cover">
+      <div className="flex py-12 flex-col items-center justify-center sm:px-6 lg:px-8 ">
       <ToastContainer
 position="bottom-center"
 autoClose={5000}

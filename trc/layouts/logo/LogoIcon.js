@@ -6,7 +6,8 @@ import LogoDark from "../../../assets/images/logos/logo-dark.svg";
 const LogoIcon = () => {
   return (
     <Link href="/">
-      <Image src={LogoDark} alt={LogoDark} />
+      {/* <Image src={LogoDark} alt={LogoDark} /> */}
+      <h1 className="text-blue-600 text-2xl bg-white font-extrabold ">Project Studio</h1>
     </Link>
   );
 };

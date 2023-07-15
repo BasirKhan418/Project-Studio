@@ -52,7 +52,7 @@ const Sidebar = ({ isMobileSidebarOpen, onSidebarClose, isSidebarOpen }) => {
                     ...(location === item.href && {
                       color: "white",
                       backgroundColor: (theme) =>
-                        `${theme.palette.primary.main}!important`,
+                        `blue !important`,
                     }),
                   }}
                 >

@@ -95,16 +95,16 @@ const SalesOverview = () => {
   };
   const seriessalesoverview = [
     {
-      name: "Ample Admin",
+      name: "Total Projects",
       data: [355, 390, 300, 350, 390, 180, 355, 390, 300, 350, 390, 180],
     },
     {
-      name: "Pixel Admin",
+      name: "Total Presentations",
       data: [280, 250, 325, 215, 250, 310, 280, 250, 325, 215, 250, 310],
     },
   ];
   return (
-    <BaseCard title="Sales Overview">
+    <BaseCard title="Your Performance ">
       <Chart
         options={optionssalesoverview}
         series={seriessalesoverview}

@@ -8,6 +8,7 @@ import theme from "../../../trc/theme/theme";
 import FullLayout from "../../../trc/layouts/FullLayout";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import Card from "../admin/Card";
 import Head from "next/head";
 export default function Index() {
   const router= useRouter();
@@ -35,6 +36,7 @@ export default function Index() {
         <FullLayout>
     <Grid container spacing={0}>
       <Grid item xs={12} lg={12}>
+        <Card/>
         <SalesOverview />
       </Grid>
       {/* ------------------------- row 1 ------------------------- */}

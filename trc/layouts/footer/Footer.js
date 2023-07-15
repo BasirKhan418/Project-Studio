@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <Box sx={{ p: 3, textAlign: "center" }}>
       <Typography>
-        © 2022 All rights reserved by{" "}
+        © 2022 All rights reserved by Project Studio{" "}
       {" "}
       </Typography>
     </Box>

@@ -88,7 +88,7 @@ setPassword(e.target.value)
   return (
     <>
     {loading?<Spinner/>:
-      <div className="flexl flex-col justify-center px-6 py-12 lg:px-8 bg-white min-h-screen">
+      <div className="flexl flex-col justify-center px-6 py-12 lg:px-8 bg-white min-h-screen bg-[url('/loginbg.jpg')] object-cover">
       <ToastContainer
 position="top-left"
 autoClose={5000}
