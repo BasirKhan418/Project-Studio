@@ -6,7 +6,7 @@ const Cta = () => {
       <section className="py-2">
         <div className="container">
           <div
-            className={`relative z-10 overflow-hidden rounded bg-blue-600 py-6 px-8 md:p-[70px]`}
+            className={`relative z-10 overflow-hidden rounded bg-blue-600 py-6 px-8 md:p-[70px] w-[100vw]`}
           >
             <div className="flex flex-wrap items-center -mx-4">
               <div className="w-full px-4 lg:w-1/2">

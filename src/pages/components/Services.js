@@ -3,10 +3,10 @@ import React from 'react'
 const Services = () => {
   return (
     <>
-      <section className="pt-6">
+      <section className="pt-6  flex justify-center">
    <div className="container">
       <div className="flex flex-wrap">
-         <div className="w-full px-4">
+         <div className="w-[100vw] px-4">
             <div className="text-center mx-auto mb-12 lg:mb-20 ">
                <span className="font-bold text-lg text-primary mb-2  ">
                Our Services
@@ -31,8 +31,8 @@ const Services = () => {
             </div>
          </div>
       </div>
-      <div className="flex flex-wrap  ">
-         <div className="w-full md:w-1/2 lg:w-1/3 px-4 ">
+      <div className="flex flex-wrap ">
+         <div className="w-[100vw] md:w-1/2 lg:w-1/3 px-4">
             <div
                className="
                p-10
@@ -46,7 +46,8 @@ const Services = () => {
                mx-4
                flex
                flex-col
-               justify-center items-center
+               justify-center 
+               items-center
                border-2
                border-blue-200
                "
