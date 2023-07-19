@@ -40,10 +40,10 @@ setPassword(e.target.value)
    setLoading(false)
     setEmail('');
     setPassword('');
-    if(response.success){
-      toast.success('Logged in successfully', {
+    if(response.success==true){
+      toast.success('Logged in Successfully', {
         position: "top-left",
-        autoClose: 1000,
+        autoClose: 1500,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -51,12 +51,12 @@ setPassword(e.target.value)
         progress: undefined,
         theme: "light",
         });
-        localStorage.setItem('myUser',JSON.stringify({token:response.token,email:response.email}));
+        localStorage.setItem('myprappuser',JSON.stringify({token:response.token,email:response.email}));
         setTimeout(()=>{
-          router.push('/')
+          router.push('/admin')
           },1500)
     }
-    else if(!response.success){
+    else if(response.success==false){
       toast.error("Invalid credentials", {
         position: "top-left",
         autoClose: 1000,

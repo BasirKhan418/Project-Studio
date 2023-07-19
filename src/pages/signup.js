@@ -38,7 +38,34 @@ setPassword(e.target.value)
 setNumber(e.target.value)
   }
   }
+  
+  
   const handleSubmit=async()=>{
+    if(password!=npassword){
+      toast.error("Password and confirm password didnot match .", {
+        position: "top-left",
+        autoClose: 1500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
+    }
+    else if(number.length!=10){
+      toast.error("Please Enter 10 digit mobile number", {
+        position: "top-left",
+        autoClose: 1500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
+    }
+    else{
     setLoading(true)
         const data ={name,email,password,number,npassword};
     const res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/signup`, {
@@ -49,16 +76,16 @@ setNumber(e.target.value)
       body: JSON.stringify(data),
     });
     const response=await res.json();
-   
+   console.log(response.success)
     if(response.success){
       setLoading(false)
       setName('');
       setEmail('');
       setPassword('');
       setnPassword('');
-      toast.success('Your account has been created successfully', {
+      toast.success('Your account has been created successfully.Please login with your credentials', {
         position: "top-left",
-        autoClose: 1000,
+        autoClose: 2000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -68,14 +95,14 @@ setNumber(e.target.value)
         });
         setTimeout(()=>{
             localStorage.setItem('myUserprapp',JSON.stringify({token:response.token,email:response.email}));
-          router.push('/')
-          },1500)
+          router.push('/login')
+          },2000)
         }
     else if(!response.success){
       setLoading(false)
-      toast.error(response.message, {
+      toast.error("Something went wrong please try again after some time or an account with this email address already exist please try again  with different email address", {
         position: "top-left",
-        autoClose: 1000,
+        autoClose: 2500,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -84,8 +111,9 @@ setNumber(e.target.value)
         theme: "light",
         });
       }
+    }
   }
-
+  
   return (
     <>
     {loading?<Spinner/>:<div>
@@ -156,7 +184,7 @@ theme="light"
       </div>
 
       <div>
-        <button onClick={handleSubmit} className="flex w-full justify-center rounded-md bg-blue-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink-600"> Continue</button>
+        <button onClick={handleSubmit} className=" my-4 flex w-full justify-center rounded-md bg-blue-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink-600"> Continue</button>
       </div>
   
 
