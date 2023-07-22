@@ -4,8 +4,8 @@ const UserSchema=new mongoose.Schema({
     email:{type:String,required:true,unique:true},
     phone:{type:Number,required:true,unique:true},
     password:{type:String,required:true},
-    role:{type:String,default:'user'},
     bio:{type:String,default:''},
+    img:{type:String,default:''},
 },{timestamps:true})
 mongoose.models={}
 export default mongoose.model('User',UserSchema);

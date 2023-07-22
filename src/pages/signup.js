@@ -76,7 +76,7 @@ setNumber(e.target.value)
       body: JSON.stringify(data),
     });
     const response=await res.json();
-   console.log(response.success)
+   console.log(response.success==true)
     if(response.success){
       setLoading(false)
       setName('');
@@ -95,7 +95,7 @@ setNumber(e.target.value)
         });
         setTimeout(()=>{
             localStorage.setItem('myUserprapp',JSON.stringify({token:response.token,email:response.email}));
-          router.push('/login')
+          router.push(`/postsignup?id=${response.id}`)
           },2000)
         }
     else if(!response.success){

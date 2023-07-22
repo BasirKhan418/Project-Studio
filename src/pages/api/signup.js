@@ -10,8 +10,9 @@ if(req.method=="POST"){
         password:CryptoJS.AES.encrypt(req.body.password, process.env.AES_SECRET).toString(),
         phone:req.body.number,
     })
-    await newuser.save();
-    res.status(200).json({success:true});
+    let a = await newuser.save();
+    
+    res.status(200).json({success:true,id:a._id});
 }
 catch{
     res.status(400).json({success:false});

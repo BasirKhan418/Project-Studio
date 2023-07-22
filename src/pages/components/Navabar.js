@@ -58,7 +58,7 @@ const Navbar = ({
             <div className="logo ml-auto flex flex-col md:justify-center justify-center items-center">
               <Image
                 alt="logo"
-                src="/pr1.jpg"
+                src="/prapplogo.png"
                 width={150}
                 height={60}
               />
