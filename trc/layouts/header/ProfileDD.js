@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import FeatherIcon from "feather-icons-react";
 import Image from "next/image";
 import userimg from "../../../assets/images/users/user2.jpg";
@@ -14,6 +14,30 @@ import {
   Divider,
 } from "@mui/material";
 const ProfileDD = () => {
+  const[name,setName]=useState('');
+  const [img ,setImg]=useState('');
+
+  useEffect(()=>{
+    const data = JSON.parse(localStorage.getItem("myprappuser"));
+    if(data&&data.token){
+      Getuserdata(data.token);
+    }
+    
+  },[])
+  const Getuserdata=async(token)=>{
+    const data={token:token}
+    const res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/getuser`, {
+      method: "POST", // or 'PUT'
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    const response=await res.json();
+    console.log(response);
+    setName(response.name);
+    setImg(response.img);
+  }
   const [anchorEl4, setAnchorEl4] = React.useState(null);
 
   const handleClick4 = (event) => {
@@ -34,11 +58,11 @@ const ProfileDD = () => {
       >
         <Box display="flex" alignItems="center">
           <Image
-            src={userimg}
+            src={`${img}`}
             alt={userimg}
-            width="30"
-            height="30"
-            className="roundedCircle"
+            width="35"
+            height="35"
+            className="rounded-3xl"
           />
           <Box
             sx={{
@@ -64,7 +88,7 @@ const ProfileDD = () => {
                 ml: 1,
               }}
             >
-              Basir
+              {name}
             </Typography>
             <FeatherIcon icon="chevron-down" width="20" height="20" />
           </Box>

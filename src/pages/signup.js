@@ -94,9 +94,8 @@ setNumber(e.target.value)
         theme: "light",
         });
         setTimeout(()=>{
-            localStorage.setItem('myUserprapp',JSON.stringify({token:response.token,email:response.email}));
           router.push(`/postsignup?id=${response.id}`)
-          },2000)
+          },400)
         }
     else if(!response.success){
       setLoading(false)
@@ -152,7 +151,10 @@ theme="light"
       <div>
         <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">Email address</label>
         <div className="mt-2">
-          <input onChange={handleChange} value={email} id="email" name="email" type="email" autoComplete="email" required className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-amber-600 sm:text-sm sm:leading-6 p-2" placeholder='Enter Your Mobile Email'/>
+          <input onChange={handleChange} value={email} id="email" name="email" type="email" autoComplete="email" required className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-amber-600 sm:text-sm sm:leading-6 p-2 peer ..." placeholder='Enter Your Mobile Email'/>
+          {email.length==0?"":<p className="mt-2 invisible peer-invalid:visible text-pink-600 text-sm font-bold">
+      Please provide a valid email address.
+    </p>}
         </div>
       </div>
       <div>

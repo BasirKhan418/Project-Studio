@@ -182,10 +182,10 @@ theme="light"
   <div className="mt-4 sm:mx-auto sm:w-full sm:max-w-sm">
     <div >
       <div className='flex justify-center flex-col items-center'>
-    {<div className=""><h4 className='font-bold'></h4><img src={`${url==""?"/grey.jpg":url}`} alt="preview" className='w-20 h-20 object-cover border-amber-500 rounded-full' /></div>}
+   
     </div>
-    <label htmlFor='pass-basic1' className='font-bold'>Upload Your Profile Picture </label>
-            <input
+  <label htmlFor='pass-basic1' className='font-bold'>Upload Your Profile Picture </label>
+    {/*<input
             onChange={handleChange}
               id="image"
               name="image"
@@ -195,7 +195,24 @@ theme="light"
            
             <button onClick={uploadImage} className='my-2 flex w-full justify-center rounded-md bg-blue-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink-600'>
             Upload Now
-          </button>
+          </button> */}
+           <div className="shrink-0 flex justify-center items-center my-4">
+           {<div className=""><h4 className='font-bold'></h4><Image src={`${url==""?"/grey.jpg":url}`} alt="preview" className='w-20 h-20 object-cover border-amber-500 rounded-full' width={20} height={20}/></div>}
+  </div>
+  <label className="block">
+    <span className="sr-only">Choose profile photo</span>
+    <input type="file" name= "image" onChange={handleChange}
+    className="block w-full text-sm text-slate-500 
+      file:mr-4 file:py-2 file:px-4
+      file:rounded-full file:border-0
+      file:text-sm file:font-semibold
+      file:bg-violet-50 file:text-violet-700
+      hover:file:bg-violet-100
+    "/>
+  </label>
+  <button onClick={uploadImage} className='my-2 flex w-full justify-center rounded-md bg-blue-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink-600'>
+            Upload Now
+          </button> 
           
     </div>
       <div>
