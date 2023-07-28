@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import FeatherIcon from "feather-icons-react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 import Image from "next/image";
 import userimg from "../../../assets/images/users/user2.jpg";
 import {
@@ -13,10 +15,11 @@ import {
   Button,
   Divider,
 } from "@mui/material";
+import { useRouter } from "next/router";
 const ProfileDD = () => {
   const[name,setName]=useState('');
   const [img ,setImg]=useState('');
-
+const router = useRouter();
   useEffect(()=>{
     const data = JSON.parse(localStorage.getItem("myprappuser"));
     if(data&&data.token){
@@ -24,6 +27,20 @@ const ProfileDD = () => {
     }
     
   },[])
+  const logout=()=>{
+    localStorage.removeItem("myprappuser");
+    toast.success("Logout Successfully", {
+      position: "top-left",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
+      router.push("/login")
+  }
   const Getuserdata=async(token)=>{
     const data={token:token}
     const res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/getuser`, {
@@ -49,6 +66,7 @@ const ProfileDD = () => {
   };
   return (
     <>
+      
       <Button
         aria-label="menu"
         color="inherit"
@@ -107,32 +125,42 @@ const ProfileDD = () => {
         }}
       >
         <Box>
+        <ToastContainer
+position="top-left"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="light"
+
+/>
           <Box p={2} pt={0}>
             <List
               component="nav"
               aria-label="secondary mailbox folder"
               onClick={handleClose4}
             >
-              <ListItemButton>
+              <Link href="/admin/editprofile"  style={{ textDecoration: "none", color: "inherit" }}><ListItemButton>
                 <ListItemText primary="Edit Profile" />
-              </ListItemButton>
-              <ListItemButton>
-                <ListItemText primary="Account" />
-              </ListItemButton>
-              <ListItemButton>
+              </ListItemButton></Link>
+              <Link href="/admin/changepassword"  style={{ textDecoration: "none", color: "inherit" }}><ListItemButton >
                 <ListItemText primary="Change Password" />
-              </ListItemButton>
-              <ListItemButton>
-                <ListItemText primary="My Settings" />
-              </ListItemButton>
+              </ListItemButton></Link>
+              <Link href="/admin/query"  style={{ textDecoration: "none", color: "inherit" }}><ListItemButton >
+                <ListItemText primary="Raise A Query" />
+              </ListItemButton></Link>
             </List>
           </Box>
           <Divider />
           <Box p={2}>
             <Link to="/">
-              <Button fullWidth variant="contained" color="primary">
+              <button onClick={logout} className="bg-blue-600 text-white p-2 rounded w-full font-semibold hover:bg-blue-800">
                 Logout
-              </Button>
+              </button>
             </Link>
           </Box>
         </Box>

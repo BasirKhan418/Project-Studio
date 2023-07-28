@@ -9,8 +9,8 @@ import Head from 'next/head';
 const Login = () => {
   const[loading,setLoading]=useState(false);
   useEffect(()=>{
- if(localStorage.getItem('mypruser')){
-  router.push('/');
+ if(localStorage.getItem('myprappuser')){
+  router.push('/admin');
  }
   },[])
   const router =useRouter();

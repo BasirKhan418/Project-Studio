@@ -12,12 +12,12 @@ import Card from "../admin/Card";
 import Head from "next/head";
 export default function Index() {
   const router= useRouter();
-//   useEffect(()=>{
-//     const myAdmin = localStorage.getItem('myAdmin')
-//     if(!myAdmin){
-//       router.push('/admin/adminlogin');
-//      }
-//   },[])
+  useEffect(()=>{
+    const myprappuser = localStorage.getItem('myprappuser')
+    if(!myprappuser){
+      router.push('/login');
+     }
+  },[])
   return (
     <ThemeProvider theme={theme}>
        <Head>

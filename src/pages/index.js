@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Head from 'next/head'
 import Hero from './components/Hero'
 import Features from './components/Features'
@@ -8,7 +8,19 @@ import Services from './components/Services'
 import Team from './components/Team'
 import Cta from './components/Cta'
 import NewsLater from './components/NewsLater'
-const index = () => {
+import { useRouter } from 'next/router'
+const Index = () => {
+  const router = useRouter();
+ useEffect(()=>{
+  if(localStorage.getItem("myprappuser")){
+ 
+  }
+  else{
+    router.push("/login")
+    console.log("not logged in");
+  }
+ },[]);
+
   return (
     <>
       <Head>
@@ -30,4 +42,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Index

@@ -17,7 +17,7 @@ const Signup = () => {
   const [ url, setUrl ] = useState("");
   const router =useRouter();
   useEffect(()=>{
-    if(localStorage.getItem('token')){
+    if(localStorage.getItem('myprappuser')){
     router.push('/admin');
     }
     setId(router.query.id);
