@@ -22,12 +22,12 @@ const Menuitems = [
   {
     title: "Chats",
     icon: "message-square",
-    href: "/rating",
+    href: "/admin/chat",
   },
   {
     title: "Meetings",
     icon: "video",
-    href: "/image",
+    href: "/admin/meeting",
   },
   {
     title: "To-Dos",

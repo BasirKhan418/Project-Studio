@@ -12,13 +12,7 @@ import { useRouter } from 'next/router'
 const Index = () => {
   const router = useRouter();
  useEffect(()=>{
-  if(localStorage.getItem("myprappuser")){
- 
-  }
-  else{
-    router.push("/login")
-    console.log("not logged in");
-  }
+  
  },[]);
 
   return (

@@ -4,10 +4,10 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <Box sx={{ p: 3, textAlign: "center" }}>
-      <Typography>
-        © 2022 All rights reserved by Project Studio{" "}
+      <p className=" text-black font-semibold p-2  w-full">
+        <span className="text-blue-600 font-bold">© </span>2023 All rights reserved by <span className="text-blue-600 font-bold">Projectstudio.com</span>{" "}
       {" "}
-      </Typography>
+      </p>
     </Box>
   );
 };

@@ -30,9 +30,9 @@ const PageWrapper = experimentalStyled("div")(({ theme }) => ({
   },
 }));
 
-const FullLayout = ({ children }) => {
+const FullLayout = ({ children,ham }) => {
   const [isSidebarOpen, setSidebarOpen] = React.useState(true);
-  const [isMobileSidebarOpen, setMobileSidebarOpen] = React.useState(false);
+  const [isMobileSidebarOpen, setMobileSidebarOpen] = React.useState(true);
   const lgUp = useMediaQuery((theme) => theme.breakpoints.up("lg"));
   return (
     <MainWrapper>
