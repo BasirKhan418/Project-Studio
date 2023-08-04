@@ -57,7 +57,7 @@ setPassword(e.target.value)
           },1500)
     }
     else if(response.success==false){
-      toast.error("Invalid credentials", {
+      toast.error(response.message, {
         position: "top-left",
         autoClose: 1000,
         hideProgressBar: false,

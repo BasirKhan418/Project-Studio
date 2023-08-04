@@ -14,14 +14,14 @@ const handler = async (req, res) => {
 }
 else{
 
-res.status(200).json({ success: false,error:"Invalid credentials"});
+res.status(200).json({ success: false,message:"Invalid credentials"});
 }
 }
 else{
-    res.status(200).json({ success: false,error:"No user found"});
+    res.status(200).json({ success: false,message:"No user found"});
 }
   } else{
-    res.status(400).json({ error: "This method is not allowed" ,success:false});
+    res.status(400).json({ message: "This method is not allowed" ,success:false});
   }
 };
 export default connectDb(handler)

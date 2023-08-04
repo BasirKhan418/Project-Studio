@@ -83,7 +83,7 @@ setNumber(e.target.value)
       setEmail('');
       setPassword('');
       setnPassword('');
-      toast.success('Your account has been created successfully.Please login with your credentials', {
+      toast.success('Your account has been created successfully.Please Complete step 2', {
         position: "top-left",
         autoClose: 2000,
         hideProgressBar: false,
@@ -95,11 +95,11 @@ setNumber(e.target.value)
         });
         setTimeout(()=>{
           router.push(`/postsignup?id=${response.id}`)
-          },400)
+          },500)
         }
-    else if(!response.success){
+    else if(response.success==false){
       setLoading(false)
-      toast.error("Something went wrong please try again after some time or an account with this email address already exist please try again  with different email address", {
+      toast.error(response.message, {
         position: "top-left",
         autoClose: 2500,
         hideProgressBar: false,

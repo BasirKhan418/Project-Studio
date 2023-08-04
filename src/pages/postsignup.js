@@ -109,10 +109,12 @@ const Signup = () => {
     });
     const response=await res.json();
    console.log(response.success)
+   localStorage.setItem('myprappuser',JSON.stringify({token:response.token,email:response.email}));
+
     if(response.success){
       setLoading(false)
      
-      toast.success('Your account has been created successfully.Please login with your credentials', {
+      toast.success('Your account has been created successfully.', {
         position: "top-left",
         autoClose: 2000,
         hideProgressBar: false,
@@ -133,7 +135,7 @@ const Signup = () => {
             progress: undefined,
             theme: "light",
             });
-          router.push('/login')
+          router.push('/admin')
           },2000)
         }
     else if(!response.success){
