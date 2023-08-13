@@ -68,6 +68,7 @@ setNumber(e.target.value)
     else{
     setLoading(true)
         const data ={name,email,password,number,npassword};
+        console.log(data)
     const res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/signup`, {
       method: "POST", // or 'PUT'
       headers: {
@@ -76,7 +77,7 @@ setNumber(e.target.value)
       body: JSON.stringify(data),
     });
     const response=await res.json();
-   console.log(response.success==true)
+console.log(response)
     if(response.success){
       setLoading(false)
       setName('');

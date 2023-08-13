@@ -23,8 +23,8 @@ if(req.method=="POST"){
   
     res.status(200).json({success:true,id:a._id});
 }
-catch{
-    res.status(400).json({success:false,message:"Some error occurs please try again after some time"});
+catch(err){
+    res.status(400).json({success:false,message:err});
 }
     //signup with email verfication 
 }

@@ -28,6 +28,7 @@
     "feather-icons-react": "^0.5.0",
     "framer-motion": "^10.15.0",
     "jsonwebtoken": "^9.0.0",
+    "mirrorfly-uikit": "^3.7.4",
     "mongoose": "^7.3.0",
     "next": "13.4.6",
     "postcss": "8.4.24",
