@@ -206,7 +206,47 @@ console.log(tokenClient);
       localStorage.removeItem("events");
     }
   };
-
+const handleAddCEvent=()=>{
+  
+  const event = {
+    'summary': 'Google I/O 2023',
+    'location': '800 Howard St., San Francisco, CA 94103',
+    'description': 'A chance to hear more about Google\'s developer products.',
+    'start': {
+      'dateTime': '2023-08-18T19:30:00+10:00',
+      'timeZone': 'Asia/Kolkata'
+    },
+    'end': {
+      'dateTime': '2023-08-18T19:30:00+010:30',
+      'timeZone': 'Asia/Kolkata'
+    },
+    'recurrence': [
+      'RRULE:FREQ=DAILY;COUNT=2'
+    ],
+    'attendees': [
+      {'email': 'lpage@example.com'},
+      {'email': 'sbrin@example.com'}
+    ],
+    'reminders': {
+      'useDefault': true,
+      'overrides': [
+        {'method': 'email', 'minutes': 24 * 60},
+        {'method': 'popup', 'minutes': 10}
+      ]
+    }
+  };
+  console.log('primary')
+  console.log(event)
+  const request = gapi.client.calendar.events.insert({
+    'calendarId': "primary",
+    'resource': event
+  });
+  console.log
+  
+  request.execute(function(event) {
+    console.log('Event created: ' + event.htmlLink);
+  });
+}
   return (
     <ThemeProvider theme={theme}>
       <style jsx global>{`
@@ -272,6 +312,12 @@ console.log(tokenClient);
     <path fillRule="evenodd" d="M8.842 18.083a8.8 8.8 0 0 1-8.65-8.948 8.841 8.841 0 0 1 8.8-8.652h.153a8.464 8.464 0 0 1 5.7 2.257l-2.193 2.038A5.27 5.27 0 0 0 9.09 3.4a5.882 5.882 0 0 0-.2 11.76h.124a5.091 5.091 0 0 0 5.248-4.057L14.3 11H9V8h8.34c.066.543.095 1.09.088 1.636-.086 5.053-3.463 8.449-8.4 8.449l-.186-.002Z" clipRule="evenodd"/>
   </svg>
   Sign out
+</button>
+<button type="button" onClick={handleAddCEvent}className="mx-4 text-white bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
+  <svg className="w-4 h-4 mr-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 19">
+    <path fillRule="evenodd" d="M8.842 18.083a8.8 8.8 0 0 1-8.65-8.948 8.841 8.841 0 0 1 8.8-8.652h.153a8.464 8.464 0 0 1 5.7 2.257l-2.193 2.038A5.27 5.27 0 0 0 9.09 3.4a5.882 5.882 0 0 0-.2 11.76h.124a5.091 5.091 0 0 0 5.248-4.057L14.3 11H9V8h8.34c.066.543.095 1.09.088 1.636-.086 5.053-3.463 8.449-8.4 8.449l-.186-.002Z" clipRule="evenodd"/>
+  </svg>
+  Add Event in Calendar
 </button>
 </div>
           {/* google script apperas here */}
@@ -359,7 +405,7 @@ const EventItem = ({ info }) => {
 
   return (
     <div>
-      <p className="bg-blue-600 text-white font-bold p-2 w-full">
+      <p className="bg-blue-600 text-white font-bold p-2 w-full rounded-xl">
         {event.title}
       </p>
     </div>
