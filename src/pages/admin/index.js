@@ -10,15 +10,11 @@ import FullLayout from "../../../trc/layouts/FullLayout";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import Card from "../admin/Card";
+import { useMyContext } from "../../context/Allstate";
 import Head from "next/head";
 export default function Index() {
+const {id,setId}=useMyContext();
   const router= useRouter();
-  useEffect(()=>{
-    const myprappuser = localStorage.getItem('myprappuser')
-    if(!myprappuser){
-      router.push('/login');
-     }
-  },[])
   return (
     <ThemeProvider theme={theme}>
        <Head>

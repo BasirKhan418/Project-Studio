@@ -32,7 +32,7 @@ const Menuitems = [
   {
     title: "To-Dos",
     icon: "list",
-    href: "/pagination",
+    href: "/admin/Todo",
   },
   {
     title: "Calendar",
@@ -40,7 +40,7 @@ const Menuitems = [
     href: "/admin/Calendar",
   },
   {
-    title: "Text-Editor",
+    title: "Study Material",
     icon: "type",
     href: "/table",
   },

@@ -1,5 +1,6 @@
 import '../styles/globals.css'
 import Navabar from './components/Navabar'
+import { AllstateProvider } from '../context/Allstate'
 import LoadingBar from 'react-top-loading-bar'
 import Footer from './components/Footer'
 import { useEffect } from 'react'
@@ -16,10 +17,10 @@ export default function App({ Component, pageProps }) {
       setProgress(100)
     })
   },[])
-  return <> <LoadingBar
+  return <> <AllstateProvider><LoadingBar
   color='blue'
   waitingTime={400}
   progress={progress}
   onLoaderFinished={() => setProgress(0)}
-/><Navabar/><Component {...pageProps} /><Footer/></>
+/><Navabar/><Component {...pageProps} /><Footer/></AllstateProvider></>
 }

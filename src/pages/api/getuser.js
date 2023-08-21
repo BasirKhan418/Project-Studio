@@ -7,8 +7,8 @@ if(req.method=="POST"){
     const token = req.body.token;
     const userdata = jwt.verify(token, process.env.JWT_SECRET);
     let user = await User.findOne({email:userdata.email});
-    const {name,email,phone,bio,img,college,country,username}=user;
-    res.status(200).json({name,email,phone,bio,img,college,country,username});
+    const {name,email,phone,bio,img,college,country,username,_id}=user;
+    res.status(200).json({name,email,phone,bio,img,college,country,username,_id});
 }
 
 }
