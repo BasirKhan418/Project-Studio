@@ -169,6 +169,22 @@ const DeleteTodo=async()=>{
     setOpenconfirm(false);
     setedelid('');
 }
+//complete
+const handlecomplete=async(id,res)=>{
+if(res==true){
+  const data ={id:id,message:"complete",res};
+  const todo = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/Todocrud`, {
+    method: "POST", // or 'PUT'
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+});
+const resp= await todo.json();
+console.log(resp);
+getallTodo();
+}
+}
 
   return (
       <ThemeProvider theme={theme}>
@@ -226,7 +242,7 @@ theme="light"
   <span className="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600" />
   <div className="sm:flex sm:justify-between sm:gap-4">
     <div >
-      <h3 className="text-lg font-bold text-gray-900 sm:text-xl">
+      <h3 className={`text-lg font-bold text-gray-900 sm:text-xl ${item.completed==true?"line-through":""}`}>
         {item.title}
       </h3>
       <p className="mt-1 text-xs font-medium text-gray-600">By {User.name}</p>
@@ -275,7 +291,12 @@ theme="light"
     Delete
   </button>
   <div className="flex items-center mr-4 mx-2">
-        <input id="inline-checkbox" type="checkbox" value={complete} name="complete" onChange={handlechange} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
+        <input id="inline-checkbox" type="checkbox" value={complete} name="complete" onChange={(e)=>{
+          if(e.target.checked){
+            setcomplete(true);
+            handlecomplete(item._id,e.target.checked);
+          }
+        }} className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"  checked={item.completed==true?true:false} />
         <label for="inline-checkbox" className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Competed</label>
     </div>
 </div>

@@ -8,12 +8,7 @@ import Services from './components/Services'
 import Team from './components/Team'
 import Cta from './components/Cta'
 import NewsLater from './components/NewsLater'
-import { useRouter } from 'next/router'
 const Index = () => {
-  const router = useRouter();
- useEffect(()=>{
-  
- },[]);
 
   return (
     <>

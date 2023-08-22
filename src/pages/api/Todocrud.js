@@ -20,6 +20,19 @@ if(req.method=='POST'){
      let todo=await Todo.findOneAndUpdate({_id:id},{title:title});
         res.status(200).json({message:'Todo updated successfully'})
     }
+    else if(req.body.message=="complete"){
+        if(req.body.res==true){
+            let {id}=req.body;
+            let todo=await Todo.findOneAndUpdate({_id:id},{completed:true});
+               res.status(200).json({message:'Todo completed successfully'})
+        }
+        else{
+            let {id}=req.body;
+        let todo=await Todo.findOneAndUpdate({_id:id},{completed:false});
+           res.status(200).json({message:'Todo undo successfully'})
+        }
+        
+       }
     else{
     let {id}=req.body;
     let todo=await Todo.findOneAndDelete({_id:id});

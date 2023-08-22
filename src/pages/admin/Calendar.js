@@ -15,8 +15,6 @@ import Button from "@mui/material/Button";
 import { TextField } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import Head from "next/head";
-import { set } from "mongoose";
-import { info } from "autoprefixer";
 const style = {
   position: "absolute",
   top: "50%",
@@ -67,7 +65,6 @@ if(e.target.name=="eventval"){
 
     let email = useremail.replace("@", "%40");
     setEmail(email);
-    console.log(email);
   }, []);
   useEffect(() => {
     const gapiLoaded = () => {
@@ -104,7 +101,6 @@ if(e.target.name=="eventval"){
         scope: SCOPES,
         callback: "", // defined later
       });
-console.log(tokenClient);
       tokenClient.callback = async (resp) => {
         if (resp.error !== undefined) {
           throw resp;
@@ -158,7 +154,6 @@ console.log(tokenClient);
       return;
     }
   SetEventd(events);
-  console.log(events);
   };
 
   const handleSelect = async(info) => {
@@ -174,7 +169,6 @@ console.log(tokenClient);
       title: eventval,
       id: Math.floor(Math.random() * 1000),
     };
-     console.log(eventval);
     const updatedEvents = [...eventss, newEvent];
     setEvents(updatedEvents);
  
