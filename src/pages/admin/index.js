@@ -15,6 +15,22 @@ import Head from "next/head";
 export default function Index() {
 const {id,setId}=useMyContext();
   const router= useRouter();
+  useEffect(()=>{
+    const myprappuser = JSON.parse(localStorage.getItem('myprappuser'))
+     getuser(myprappuser.token);
+},[])
+const getuser=async(token)=>{
+    const data ={token:token};
+    const pr = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/getuser`, {
+      method: "POST", // or 'PUT'
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    const res = await pr.json();
+    setId(res._id);
+}
   return (
     <ThemeProvider theme={theme}>
        <Head>
