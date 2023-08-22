@@ -75,9 +75,9 @@ const router = useRouter();
         onClick={handleClick4}
       >
         <Box display="flex" alignItems="center">
-          <Image
+          <img
             src={`${img}`}
-            alt={userimg}
+            alt={"user image"}
             width="35"
             height="35"
             className="rounded-3xl"
