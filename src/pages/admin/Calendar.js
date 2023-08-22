@@ -6,7 +6,7 @@ import FullCalendar from "@fullcalendar/react";
 import daygridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import resourceTimelinePlugin from "@fullcalendar/resource-timeline";
-import timeGridPlugin from "@fullcalendar/timegrid"; // needed for dayClick
+import timeGridPlugin from "@fullcalendar/timegrid";
 import Backdrop from "@mui/material/Backdrop";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
