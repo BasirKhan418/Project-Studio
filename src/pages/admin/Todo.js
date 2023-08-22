@@ -42,8 +42,10 @@ const Todo = () => {
   const handleCloseconfirm = () => setOpenconfirm(false);
   // useeffect for getting user data from localstorage;
   useEffect(()=>{
-    let user=JSON.parse(localStorage.getItem('myprappuser'));
-    getuser(user.token);
+    const myprappuser = JSON.parse(localStorage.getItem('myprappuser'))
+    if(myprappuser&&myprappuser.token){
+      getuser(myprappuser.token);
+    }
     console.log(id)
     if(id.length!=0){
       getallTodo();

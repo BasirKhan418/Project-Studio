@@ -12,12 +12,17 @@ import { useEffect } from "react";
 import Card from "../admin/Card";
 import { useMyContext } from "../../context/Allstate";
 import Head from "next/head";
+import { m } from "framer-motion";
 export default function Index() {
 const {id,setId}=useMyContext();
   const router= useRouter();
   useEffect(()=>{
+   
     const myprappuser = JSON.parse(localStorage.getItem('myprappuser'))
-     getuser(myprappuser.token);
+    if(myprappuser&&myprappuser.token){
+      getuser(myprappuser.token);
+    }
+     
 },[])
 const getuser=async(token)=>{
     const data ={token:token};
@@ -30,6 +35,7 @@ const getuser=async(token)=>{
     });
     const res = await pr.json();
     setId(res._id);
+    console.log(res._id);
 }
   return (
     <ThemeProvider theme={theme}>
