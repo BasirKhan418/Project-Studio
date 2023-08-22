@@ -43,15 +43,15 @@ if(e.target.name=="eventval"){
 
 }
   //google calendar
-  const CLIENT_ID =
-    "879866954848-q74bil6cfhkogggmmt4p7l0cdepuc2kh.apps.googleusercontent.com";
-  const API_KEY = "AIzaSyA5FO9UIjn0BU3PGIc3PkivvymBM5vLq-k";
-  const DISCOVERY_DOC =
-    "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest";
-  const SCOPES = "https://www.googleapis.com/auth/calendar";
+  // const CLIENT_ID =
+  //   "879866954848-q74bil6cfhkogggmmt4p7l0cdepuc2kh.apps.googleusercontent.com";
+  // const API_KEY = "AIzaSyA5FO9UIjn0BU3PGIc3PkivvymBM5vLq-k";
+  // const DISCOVERY_DOC =
+  //   "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest";
+  // const SCOPES = "https://www.googleapis.com/auth/calendar";
 
-  const [gapiInited, setGapiInited] = useState(false);
-  const [gisInited, setGisInited] = useState(false);
+  // const [gapiInited, setGapiInited] = useState(false);
+  // const [gisInited, setGisInited] = useState(false);
   const [eventss, setEvents] = useState([]);
   useEffect(() => {
     let a = localStorage.getItem("events");
@@ -63,95 +63,95 @@ if(e.target.name=="eventval"){
     let email = useremail.replace("@", "%40");
     setEmail(email);
   }, []);
-  useEffect(() => {
-    const gapiLoaded = () => {
-      gapi.load("client", initializeGapiClient);
-    };
+  // useEffect(() => {
+  //   const gapiLoaded = () => {
+  //     gapi.load("client", initializeGapiClient);
+  //   };
 
-    const gisLoaded = () => {
-      const tokenClient = google.accounts.oauth2.initTokenClient({
-        client_id: CLIENT_ID,
-        scope: SCOPES,
-        callback: "", // defined later
-      });
-      // Update state to indicate Google Identity Services are initialized
-      setGisInited(true);
-    };
+  //   const gisLoaded = () => {
+  //     const tokenClient = google.accounts.oauth2.initTokenClient({
+  //       client_id: CLIENT_ID,
+  //       scope: SCOPES,
+  //       callback: "", // defined later
+  //     });
+  //     // Update state to indicate Google Identity Services are initialized
+  //     setGisInited(true);
+  //   };
 
-    const initializeGapiClient = async () => {
-      await gapi.client.init({
-        apiKey: API_KEY,
-        discoveryDocs: [DISCOVERY_DOC],
-      });
-      // Update state to indicate Gapi client is initialized
-      setGapiInited(true);
-    };
-    // Call the functions to initialize Google API and Google Identity Services
-    gapiLoaded();
-    gisLoaded();
-  }, [gapiInited, gisInited]);
+  //   const initializeGapiClient = async () => {
+  //     await gapi.client.init({
+  //       apiKey: API_KEY,
+  //       discoveryDocs: [DISCOVERY_DOC],
+  //     });
+  //     // Update state to indicate Gapi client is initialized
+  //     setGapiInited(true);
+  //   };
+  //   // Call the functions to initialize Google API and Google Identity Services
+  //   gapiLoaded();
+  //   gisLoaded();
+  // }, [gapiInited, gisInited]);
 
-  const handleAuthClick = async () => {
-    if (gapi.client.getToken() === null) {
-      const tokenClient = google.accounts.oauth2.initTokenClient({
-        client_id: CLIENT_ID,
-        scope: SCOPES,
-        callback: "", // defined later
-      });
-      tokenClient.callback = async (resp) => {
-        if (resp.error !== undefined) {
-          throw resp;
-        }
-        const signoutButton = document.getElementById("signout_button");
-        if (signoutButton) {
-          signoutButton.style.visibility = "visible";
-        }
-      await listUpcomingEvents();
-      };
+  // const handleAuthClick = async () => {
+  //   if (gapi.client.getToken() === null) {
+  //     const tokenClient = google.accounts.oauth2.initTokenClient({
+  //       client_id: CLIENT_ID,
+  //       scope: SCOPES,
+  //       callback: "", // defined later
+  //     });
+  //     tokenClient.callback = async (resp) => {
+  //       if (resp.error !== undefined) {
+  //         throw resp;
+  //       }
+  //       const signoutButton = document.getElementById("signout_button");
+  //       if (signoutButton) {
+  //         signoutButton.style.visibility = "visible";
+  //       }
+  //     await listUpcomingEvents();
+  //     };
 
-      tokenClient.requestAccessToken({ prompt: "consent" });
-    } else {
-      // Skip display of account chooser and consent dialog for an existing session.
-      const tokenClient = google.accounts.oauth2.initTokenClient({
-        client_id: CLIENT_ID,
-        scope: SCOPES,
-        callback: "", // defined later
-      });
-      tokenClient.requestAccessToken({ prompt: "" });
-    }
-  };
+  //     tokenClient.requestAccessToken({ prompt: "consent" });
+  //   } else {
+  //     // Skip display of account chooser and consent dialog for an existing session.
+  //     const tokenClient = google.accounts.oauth2.initTokenClient({
+  //       client_id: CLIENT_ID,
+  //       scope: SCOPES,
+  //       callback: "", // defined later
+  //     });
+  //     tokenClient.requestAccessToken({ prompt: "" });
+  //   }
+  // };
 
-  const handleSignoutClick = () => {
-    const token = gapi.client.getToken();
-    if (token !== null) {
-      google.accounts.oauth2.revoke(token.access_token);
-      gapi.client.setToken("");
-      SetEventd([] );
-    }
-  };
-  const listUpcomingEvents = async () => {
-    let response;
-    try {
-      const request = {
-        calendarId: "primary",
-        timeMin: new Date().toISOString(),
-        showDeleted: false,
-        singleEvents: true,
-        maxResults: 10,
-        orderBy: "startTime",
-      };
-      response = await gapi.client.calendar.events.list(request);
-    } catch (err) {
-      document.getElementById("content").innerText = err.message;
-      return;
-    }
+  // const handleSignoutClick = () => {
+  //   const token = gapi.client.getToken();
+  //   if (token !== null) {
+  //     google.accounts.oauth2.revoke(token.access_token);
+  //     gapi.client.setToken("");
+  //     SetEventd([] );
+  //   }
+  // };
+  // const listUpcomingEvents = async () => {
+  //   let response;
+  //   try {
+  //     const request = {
+  //       calendarId: "primary",
+  //       timeMin: new Date().toISOString(),
+  //       showDeleted: false,
+  //       singleEvents: true,
+  //       maxResults: 10,
+  //       orderBy: "startTime",
+  //     };
+  //     response = await gapi.client.calendar.events.list(request);
+  //   } catch (err) {
+  //     document.getElementById("content").innerText = err.message;
+  //     return;
+  //   }
 
-    const events = response.result.items;
-    if (!events || events.length == 0) {
-      return;
-    }
-  SetEventd(events);
-  };
+  //   const events = response.result.items;
+  //   if (!events || events.length == 0) {
+  //     return;
+  //   }
+  // SetEventd(events);
+  // };
 
   const handleSelect = async(info) => {
     const { start, end } = info;
@@ -210,14 +210,14 @@ if(e.target.name=="eventval"){
           plugins={[daygridPlugin, interactionPlugin]}
           views={["dayGridMonth", "dayGridWeek", "dayGridDay"]}
         />
-        <Head>
+        {/* <Head>
           <script async defer src="https://apis.google.com/js/api.js"></script>
           <script
             async
             defer
             src="https://accounts.google.com/gsi/client"
           ></script>
-        </Head>
+        </Head> */}
         <button
           className="p-2 bg-red-600 rounded text-white font-semibold m-2"
           onClick={RemoveCustomEvents}
@@ -235,7 +235,7 @@ if(e.target.name=="eventval"){
           ></iframe>
         </div>
 
-        <div>
+        {/* <div>
           
 <h1 className="my-6 mb-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white text-center">Fetch All Events From Google Calendar</h1>
 <p className="text-center mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Sign in with Google to fetch all your event details from google calendar and add an event to google calendar</p>
@@ -254,9 +254,9 @@ if(e.target.name=="eventval"){
 </button>
 </div>
           {/* google script apperas here */}
-        </div>
+        {/* </div>
         {/* calendar modal starts feom here */}
-<div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+{/* <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
     <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
         <thead className="text-xs text-gray-700 uppercase dark:text-gray-400">
             <tr>
@@ -291,7 +291,7 @@ if(e.target.name=="eventval"){
             </tr>})}
         </tbody>
     </table>
-</div>
+</div>  */}
 
         <div>
           <Modal
