@@ -25,7 +25,6 @@ const style = {
   boxShadow: 24,
   p: 4,
 };
-import { get, set } from 'mongoose';
 const Todo = () => {
   const {id,setId}=useMyContext();
   const[tododata,settodo]=useState('');

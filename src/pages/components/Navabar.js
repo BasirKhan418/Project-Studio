@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
+import { FaUserAlt} from 'react-icons/fa';
 
 const Navbar = ({
 }) => {
@@ -30,23 +31,23 @@ const Navbar = ({
   return (
     <>
       <div
-        className={` Navbar flex flex-col lg:flex-row  justify-start md:justify-start items-center py-2 shadow-md bg-white dark:bg-black dark:text-white text-black sticky top-0 z-20 dark:sticky dark:top:0 ${!sidebarham?"h-20":""} w-full ${
+        className={` Navbar flex flex-col lg:flex-row  justify-start md:justify-start items-center py-2 shadow-md bg-blue-800 dark:bg-blue-800 dark:text-black text-white sticky top-0 z-20 dark:sticky dark:top:0 ${!sidebarham?"h-20":""} w-full ${
           !sidebar && "overflow-hidden"
         }`}
       >
         <div className="lg:hidden mx-4 absolute right-0 top-8" onClick={toggleCartham}>
           <div className="space-y-2" >
             <span
-              className={`block w-8 h-0.5 bg-blue-600 ${
+              className={`block w-8 h-0.5 bg-white ${
                 sidebarham
                   ? "rotate-45 translate-y-3 absolute top-1"
                   : ""
               }`}
             ></span>
             <span
-              className={`block w-8 h-0.5 bg-black dark:bg-white ${sidebarham? "-rotate-45 translate-y-3 absolute bottom-1" : ""}`}
+              className={`block w-8 h-0.5 bg-white dark:bg-white ${sidebarham? "-rotate-45 translate-y-3 absolute bottom-1" : ""}`}
             ></span>
-            <span className={`block w-8 h-0.5 bg-blue-600 ${
+            <span className={`block w-8 h-0.5 bg-white ${
                 sidebarham
                   ? "opacity-0"
                   : ""
@@ -70,31 +71,31 @@ const Navbar = ({
             <hr className="h-2 w-full" />
             <Link href={"/"}>
               {" "}
-              <li className="text-lg my-2 font-semibold hover:bg-blue-100 hover:text-black hover:rounded transition duration-150 ease-out hover:ease-in ">
+              <li className="text-lg my-2 font-semibold hover:border-2 hover:border-blue-600 p-1 hover:rounded transition duration-150 ease-out hover:ease-in ">
                 Home
               </li>
             </Link>
             <Link href={"/rooms"}>
               {" "}
-              <li className="text-lg my-2 font-semibold hover:bg-blue-100 hover:text-black hover:rounded transition duration-150 ease-out hover:ease-in">
+              <li className="text-lg my-2 font-semibold hover:border-2 hover:border-blue-600 p-1 hover:rounded transition duration-150 ease-out hover:ease-in">
                 Features
               </li>
             </Link>
             <Link href={"/foods"}>
               {" "}
-              <li className="text-lg my-2 font-semibold  hover:bg-blue-100 hover:text-black hover:rounded transition duration-150 ease-out hover:ease-in">
+              <li className="text-lg my-2 font-semibold  hover:border-2 hover:border-blue-600 p-1 hover:rounded transition duration-150 ease-out hover:ease-in">
                 Pricing
               </li>
             </Link>
             <Link href={"/gallery"}>
               {" "}
-              <li className="text-lg my-2 font-semibold  hover:bg-blue-100 hover:text-black hover:rounded transition duration-150 ease-out hover:ease-in">
+              <li className="text-lg my-2 font-semibold  hover:border-2 hover:border-blue-600 p-1hover:rounded transition duration-150 ease-out hover:ease-in">
                 About
               </li>
             </Link>
             <Link href={"/contactus"}>
               {" "}
-              <li className="text-lg my-2 font-semibold  hover:bg-blue-100 hover:text-black hover:rounded transition duration-150 ease-out hover:ease-in">
+              <li className="text-lg my-2 font-semibold  hover:border-2 hover:border-blue-600 p-1 hover:rounded transition duration-150 ease-out hover:ease-in">
                Contact Us
               </li>
             </Link>
@@ -105,11 +106,11 @@ const Navbar = ({
         {/* <AiOutlineShoppingCart className="text-3xl md:text-xl"/> */}
         <div className="cart absolute right-4 top-6 mx-5 ">
           
-          <Link href={"/login"}><button className=" border-solid border-2 border-blue-600 px-2 p-2 bg-blue-600 text-white font-semibold rounded-3xl h-10 w-40 hover:bg-white hover:text-black hidden lg:block text-center">Log in </button></Link>
+          <Link href={"/login"} className="">  <button className="border-solid border-2 border-blue-600 px-2 p-2 bg-blue-800 text-white font-semibold rounded-2xl h-10 w-32 hover:bg-blue-600 hover:text-white hidden lg:block text-center">  Login </button></Link>
           
             </div>
         {!sidebar&&<div
-          className={`bg-white h-[60vh]  py-10 px-8 transition-all dark:bg-black dark:text-white
+          className={`bg-blue-800 h-[60vh]  py-10 px-8 transition-all dark:bg-blue-800 dark:text-white
           }`}
         >
           <ul className="flex justify-center mx-4 items-center overflow-hidden whitespace-nowrap space-x-4 flex-col ">

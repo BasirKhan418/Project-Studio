@@ -9,8 +9,9 @@ export function useMyContext() {
 
 export function AllstateProvider({ children }) {
 const [id, setId] = useState('');
+const[alert,setAlert]=useState(false);
   return (
-    <Allstate.Provider value={{id,setId}}>
+    <Allstate.Provider value={{id,setId,alert,setAlert}}>
       {children}
     </Allstate.Provider>
   );
