@@ -85,6 +85,7 @@ console.log(response)
       setEmail('');
       setPassword('');
       setnPassword('');
+      setAlert(true)
       toast.success('Your account has been created successfully.Please Complete step 2', {
         position: "top-left",
         autoClose: 2000,

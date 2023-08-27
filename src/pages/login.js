@@ -10,12 +10,11 @@ import Alert from './Alert';
 // import { useMyContext } from '../context/Allstate';
 const Login = () => {
   const[loading,setLoading]=useState(false);
-  const {alert,setAlert}=useState(false);
+  const [alert,setAlert]=useState(false);
   useEffect(()=>{
  if(localStorage.getItem('myprappuser')){
   router.push('/admin');
  }
- setAlert(false);
   },[])
   const router =useRouter();
   const [email,setEmail]=useState('');
@@ -27,14 +26,15 @@ const Login = () => {
   }
   else if(e.target.name=="password"){
 setPassword(e.target.value)
-console.log(password)
   }
   }
-  const handleSubmit=async(e)=>{
+  const handleSubmit=async()=>{
     setLoading(true)
-    e.preventDefault();
-    try{
+    console.log(email,password)
+      if(email.length
+        !=0&&password.length!=0){
         const data ={email,password};
+        console.log(password);
     const res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/login`, {
       method: "POST", // or 'PUT'
       headers: {
@@ -43,6 +43,7 @@ console.log(password)
       body: JSON.stringify(data),
     });
     const response=await res.json();
+  
    setLoading(false)
     setEmail('');
     setPassword('');
@@ -75,12 +76,10 @@ console.log(password)
         theme: "light",
         });
     }
-   
-         
   }
-  catch(error){
+  else{
     setLoading(false)
-    toast.error("Something went wrong ! Please try again after some time.", {
+    toast.error("Please enter email and password before login", {
       position: "top-left",
       autoClose: 1000,
       hideProgressBar: false,
@@ -91,6 +90,19 @@ console.log(password)
       theme: "light",
       });
   }
+         
+    // setLoading(false)
+    // toast.error("Something went wrong ! Please try again after some time.", {
+    //   position: "top-left",
+    //   autoClose: 1000,
+    //   hideProgressBar: false,
+    //   closeOnClick: true,
+    //   pauseOnHover: true,
+    //   draggable: true,
+    //   progress: undefined,
+    //   theme: "light",
+    //   });
+  
   }
   return (
     <>
@@ -172,8 +184,7 @@ theme="light"
       <p className="mx-auto mt-4 max-w-md text-center text-gray-500">
       Welcome back to Project Studio! Log in to your account to access personalized features, manage your profile, and engage with our vibrant community.
       </p>
-      <form
-      onSubmit={handleSubmit} method="POST"
+      <div
         className="mb-0 mt-6 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8"
       >
         <p className="text-center text-lg font-medium">
@@ -186,7 +197,7 @@ theme="light"
           <div className="relative">
             <input
               type="email"
-              onChange={handleChange} value={email} id="email" name="email"
+              onChange={handleChange} value={email} id="email" name="email" autoComplete='on'
               className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-smb border-2"
               placeholder="Enter email"
             />
@@ -221,7 +232,7 @@ theme="light"
               type={vpassword?"text":"password"}
               className={`w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm border-2 `}
               placeholder="Enter password"
-              id="password" onChange={handleChange} value={password} name='password'
+              id="password" onChange={handleChange} value={password} name='password' autoComplete='on'
             />
             <span className={`absolute inset-y-0 end-0 grid place-content-center px-4 `} onClick={()=>{
             setVpassword(!vpassword);
@@ -251,7 +262,7 @@ theme="light"
          
         </div>
         <button
-        type='submit'
+       onClick={handleSubmit}
           className="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white"
         >
           Sign in
@@ -266,7 +277,7 @@ theme="light"
       Not an account?
       <Link href="/signup" className="font-semibold leading-6 text-blue-600 hover:text-blue-500"> Create your account</Link>
     </p>
-      </form>
+      </div>
     </div>
   </div>
   <div className='w-[100vw] h-[55vh] lg:h-[90vh] lg:w-[50vw]'>

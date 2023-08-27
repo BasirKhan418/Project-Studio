@@ -26,7 +26,7 @@ const style = {
   p: 4,
 };
 const Todo = () => {
-  const {id,setId}=useState('');
+  const [id,setId]=useState('');
   const[tododata,settodo]=useState('');
   const[alltodos,setalltodos]=useState([]);
   const[User,setUser]=useState([]);
@@ -46,9 +46,7 @@ const Todo = () => {
       getuser(myprappuser.token);
     }
     console.log(id)
-    if(id.length!=0){
       getallTodo();
-    }
   },[])
   console.log(complete)
   //get user function
