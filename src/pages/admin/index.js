@@ -10,16 +10,16 @@ import FullLayout from "../../../trc/layouts/FullLayout";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import Card from "../admin/Card";
-import { useMyContext } from "../../context/Allstate";
+// import { useMyContext } from "../../context/Allstate";
 import Head from "next/head";
 export default function Index() {
-const {id,setId}=useMyContext();
+// const {id,setId}=useMyContext();
   const router= useRouter();
   useEffect(()=>{
    
     const myprappuser = JSON.parse(localStorage.getItem('myprappuser'))
     if(myprappuser&&myprappuser.token){
-      getuser(myprappuser.token);
+      // getuser(myprappuser.token);
     }
      
 },[])

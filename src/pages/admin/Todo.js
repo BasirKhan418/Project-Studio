@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useMyContext } from '../../context/Allstate';
+// import { useMyContext } from '../../context/Allstate';
 import theme from "../../../trc/theme/theme";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
@@ -26,7 +26,7 @@ const style = {
   p: 4,
 };
 const Todo = () => {
-  const {id,setId}=useMyContext();
+  const {id,setId}=useState('');
   const[tododata,settodo]=useState('');
   const[alltodos,setalltodos]=useState([]);
   const[User,setUser]=useState([]);

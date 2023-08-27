@@ -8,10 +8,10 @@ import Image
  from 'next/image';
  import Spinner from './components/Spinner';
  import Head from 'next/head';
- import { useMyContext } from '../context/Allstate';
+//  import { useMyContext } from '../context/Allstate';
  import Alert from './Alert';
 const Signup = () => {
-  const {alert,setAlert}=useMyContext();
+  const {alert,setAlert}=useState(false);
   const[loading, setLoading]=useState(false);
   const [id,setId]=useState('');
   const [bio,setbio]=useState('');

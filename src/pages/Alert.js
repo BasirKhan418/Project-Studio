@@ -1,7 +1,8 @@
 import React from 'react'
-import { useMyContext } from '../context/Allstate'
+// import { useMyContext } from '../context/Allstate'
+import { useState } from 'react'
 const Alert = (props) => {
-    const {alert,setAlert}=useMyContext();
+    const {alert,setAlert}=useState(false);
 
     const handleclose=()=>{
         setAlert(false);

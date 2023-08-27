@@ -7,10 +7,10 @@ import Spinner from './components/Spinner';
 import Image from 'next/image';
 import Head from 'next/head';
 import Alert from './Alert';
-import { useMyContext } from '../context/Allstate';
+// import { useMyContext } from '../context/Allstate';
 const Login = () => {
   const[loading,setLoading]=useState(false);
-  const {alert,setAlert}=useMyContext();
+  const {alert,setAlert}=useState(false);
   useEffect(()=>{
  if(localStorage.getItem('myprappuser')){
   router.push('/admin');
@@ -27,6 +27,7 @@ const Login = () => {
   }
   else if(e.target.name=="password"){
 setPassword(e.target.value)
+console.log(password)
   }
   }
   const handleSubmit=async(e)=>{
@@ -93,7 +94,7 @@ setPassword(e.target.value)
   }
   return (
     <>
-    {  alert?<Alert message="Logged in Successfully" desc="Welcome back! You've successfully logged in." className="p-2 m-2"/>:""
+    {  alert?<Alert message="Logged in Successfully" desc="Welcome back! You've successfully logged in."/>:""
       }
     {loading?<Spinner/>:<div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 flex-wrap">
       <ToastContainer
