@@ -101,7 +101,6 @@ setEmail(user.email);
         theme: "light",
         });
     setUrl(data.url)
-    console.log(url)
     })
     .catch(err => {
     toast.error("Sorry some error occured please try again after some time", {

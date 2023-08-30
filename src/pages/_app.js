@@ -1,11 +1,12 @@
 import '../styles/globals.css'
 import Navabar from './components/Navabar'
-import { AllstateProvider } from '../context/Allstate'
 import LoadingBar from 'react-top-loading-bar'
 import Footer from './components/Footer'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import Router, { useRouter } from 'next/router'
+import { Provider } from 'react-redux'
+import { store } from './store/store'
 export default function App({ Component, pageProps }) {
   const router=useRouter();
   const [progress, setProgress] = useState(0)
@@ -17,10 +18,10 @@ export default function App({ Component, pageProps }) {
       setProgress(100)
     })
   },[])
-  return <> <AllstateProvider><LoadingBar
+  return <> <Provider store={store}><LoadingBar
   color='blue'
   waitingTime={400}
   progress={progress}
   onLoaderFinished={() => setProgress(0)}
-/><Navabar/><Component {...pageProps} /><Footer/></AllstateProvider></>
+/><Navabar/><Component {...pageProps} /> <Footer/> </Provider></>
 }

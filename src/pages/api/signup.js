@@ -3,6 +3,7 @@ import connectDb from "../../middleware/mongoose";
 import User from "../../../models/User";
 const handler = async (req, res) => {
 if(req.method=="POST"){
+  
     let auser= await User.find({email:req.body.email});
     let muser = await User.find({phone:req.body.number});
    if(auser.length>0){

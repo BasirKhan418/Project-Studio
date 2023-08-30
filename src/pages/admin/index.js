@@ -10,19 +10,18 @@ import FullLayout from "../../../trc/layouts/FullLayout";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import Card from "../admin/Card";
-// import { useMyContext } from "../../context/Allstate";
+import { fetchUser } from "../store/userdata";
+import { useDispatch,useSelector } from 'react-redux';
 import Head from "next/head";
 export default function Index() {
-// const {id,setId}=useMyContext();
+const dispatch = useDispatch();
   const router= useRouter();
   useEffect(()=>{
-   
     const myprappuser = JSON.parse(localStorage.getItem('myprappuser'))
-    if(myprappuser&&myprappuser.token){
-      // getuser(myprappuser.token);
-    }
-     
+  dispatch(fetchUser(myprappuser.token));   
 },[])
+const selector = useSelector((state) => state.userdata);
+console.log("ss",selector);
 const getuser=async(token)=>{
     const data ={token:token};
     const pr = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/getuser`, {

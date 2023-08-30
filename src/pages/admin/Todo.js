@@ -13,6 +13,8 @@ import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
+import { fetchUser } from "../store/userdata";
+import { useDispatch,useSelector } from 'react-redux';
 const style = {
   position: "absolute",
   top: "50%",
@@ -26,7 +28,8 @@ const style = {
   p: 4,
 };
 const Todo = () => {
-  const [id,setId]=useState('');
+  const dispatch= useDispatch();
+  const UserDataSelector= useSelector((state)=>state.userdata);
   const[tododata,settodo]=useState('');
   const[alltodos,setalltodos]=useState([]);
   const[User,setUser]=useState([]);
@@ -41,28 +44,18 @@ const Todo = () => {
   const handleCloseconfirm = () => setOpenconfirm(false);
   // useeffect for getting user data from localstorage;
   useEffect(()=>{
+  
     const myprappuser = JSON.parse(localStorage.getItem('myprappuser'))
-    if(myprappuser&&myprappuser.token){
-      getuser(myprappuser.token);
-    }
-    console.log(id)
-      getallTodo();
+        // dispatch(fetchUser(myprappuser.token));
+
+      if(UserDataSelector.id.length!=0){
+        getallTodo(UserDataSelector.id);
+        
+      }
+      else{
+        dispatch(fetchUser(myprappuser.token));
+      }
   },[])
-  console.log(complete)
-  //get user function
-  const getuser=async(token)=>{
-    const data ={token:token};
-    const pr = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/getuser`, {
-      method: "POST", // or 'PUT'
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
-    const res = await pr.json();
-   setUser(res);
-   setId(res._id);
-  }
 
   //handlechange function starts here
   const handlechange=(e)=>{
@@ -75,7 +68,7 @@ const Todo = () => {
   }
   //Todo all crud functions starts here
   //get all todo
-  const getallTodo=async()=>{
+  const getallTodo=async(id)=>{
     const data ={user:id,message:"getall"};
     const todo = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/Todocrud`, {
       method: "POST", // or 'PUT'
@@ -234,7 +227,7 @@ theme="light"
          <div className='mx-6 h-1 w-52 bg-green-600 rounded-xl '></div>
          <div className='flex flex-wrap overflow-hidden'>
           {/* todo starts here */}
-          {alltodos.slice(0).reverse().map((item)=>{return <div className=' w-96 overflow-hidden' key={item._id}>
+          {alltodos.length!=0?alltodos.slice(0).reverse().map((item)=>{return <div className=' w-96 overflow-hidden' key={item._id}>
          <div
   className="relative block overflow-hidden rounded-lg border border-gray-100 p-4 sm:p-6 lg:p-8 mx-2 my-4"
 >
@@ -244,7 +237,7 @@ theme="light"
       <h3 className={`text-lg font-bold text-gray-900 sm:text-xl ${item.completed==true?"line-through":""}`}>
         {item.title}
       </h3>
-      <p className="mt-1 text-xs font-medium text-gray-600">By {User.name}</p>
+      <p className="mt-1 text-xs font-medium text-gray-600">By {UserDataSelector.name}</p>
     </div>
   </div>
   <dl className="mt-6 flex gap-4 sm:gap-6 flex-wrap">
@@ -303,7 +296,7 @@ theme="light"
   </dl>
 </div>
 
-         </div>})}
+         </div>}):<div className='h-96 flex justify-center items-center w-[100vw]'><div className='text-center text-xl font-bold text-gray-500 mx-4 p-2'>No Todos Found</div> <button className='mx-4 p-2 text-white bg-green-600 rounded font-semibold' onClick={()=>{getallTodo(UserDataSelector.id)}}> Refresh Now</button></div>}
          </div>
        </div>
         {/* For edit modal */}
