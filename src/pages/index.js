@@ -8,19 +8,8 @@ import Services from './components/Services'
 import Team from './components/Team'
 import Cta from './components/Cta'
 import NewsLater from './components/NewsLater'
-import { fetchUser } from './store/userdata';
-import { useDispatch,useSelector } from 'react-redux';
 
 const Index = () => {
-const dispatch = useDispatch();
-useEffect(() => {
-  const token= JSON.parse(localStorage.getItem("token"));
-  console.log(token,token.token)
-  dispatch(fetchUser(token.token));
-  },[])
-
-const selector = useSelector((state) => state.userdata);
-console.log("ss",selector);
 
   return (
     <>

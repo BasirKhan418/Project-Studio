@@ -10,7 +10,7 @@ import FullLayout from "../../../trc/layouts/FullLayout";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import Card from "../admin/Card";
-import { fetchUser } from "../store/userdata";
+import { fetchUser } from "../../store/userdata";
 import { useDispatch,useSelector } from 'react-redux';
 import Head from "next/head";
 export default function Index() {
@@ -21,27 +21,26 @@ const dispatch = useDispatch();
   dispatch(fetchUser(myprappuser.token));   
 },[])
 const selector = useSelector((state) => state.userdata);
-console.log("ss",selector);
-const getuser=async(token)=>{
-    const data ={token:token};
-    const pr = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/getuser`, {
-      method: "POST", // or 'PUT'
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
-    const res = await pr.json();
-    setId(res._id);
-    console.log(res._id);
-}
+// const getuser=async(token)=>{
+//     const data ={token:token};
+//     const pr = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/getuser`, {
+//       method: "POST", // or 'PUT'
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify(data),
+//     });
+//     const res = await pr.json();
+//     setId(res._id);
+//     console.log(res._id);
+// }
   return (
     <ThemeProvider theme={theme}>
        <Head>
       <title>Admin Panel - Ps App</title>
       <meta name="description" content="Effortlessly manage reservations and streamline culinary services with our Hotel Booking and Food Delivery Admin Panel. Take control of bookings, track orders, and ensure seamless operations for your hotel and food delivery services. Simplify your administrative tasks and optimize your hospitality and dining experiences with our comprehensive admin panel."/>
       <meta name="keywords" content="hotel booking, food delivery, accommodation, online reservations, gourmet dining, seamless service, delightful stay, convenient hospitality, doorstep delivery, culinary experience, vacation getaway, top-rated hotel, comfortable accommodations, exquisite cuisine, memorable retreat" />
-      <script src="https://unpkg.com/@zegocloud/zego-uikit-prebuilt/zego-uikit-prebuilt.js"></script>
+      {/* <script src="https://unpkg.com/@zegocloud/zego-uikit-prebuilt/zego-uikit-prebuilt.js"></script> */}
      </Head>
        <style jsx global>{`
         footer {

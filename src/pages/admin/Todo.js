@@ -13,7 +13,7 @@ import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
-import { fetchUser } from "../store/userdata";
+import { fetchUser } from '../../store/userdata';
 import { useDispatch,useSelector } from 'react-redux';
 const style = {
   position: "absolute",
@@ -48,13 +48,14 @@ const Todo = () => {
     const myprappuser = JSON.parse(localStorage.getItem('myprappuser'))
         // dispatch(fetchUser(myprappuser.token));
 
-      if(UserDataSelector.id.length!=0){
-        getallTodo(UserDataSelector.id);
-        
-      }
-      else{
-        dispatch(fetchUser(myprappuser.token));
-      }
+    console.log();
+    if(UserDataSelector.id.length!=0){
+      getallTodo(UserDataSelector.id);
+    }
+    else{
+      dispatch(fetchUser(myprappuser.token));
+    }
+    // getallTodo(UserDataSelector.id);
   },[])
 
   //handlechange function starts here
@@ -69,6 +70,7 @@ const Todo = () => {
   //Todo all crud functions starts here
   //get all todo
   const getallTodo=async(id)=>{
+    console.log(id);
     const data ={user:id,message:"getall"};
     const todo = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/Todocrud`, {
       method: "POST", // or 'PUT'
@@ -84,7 +86,8 @@ const Todo = () => {
   //add a todo
   const addTodo=async()=>{
     if(tododata.length!=0){
-    const data ={user:User._id,message:"addtodo",title:tododata};
+      console.log(UserDataSelector.id);
+    const data ={user:UserDataSelector.id,message:"addtodo",title:tododata};
     const todo = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/Todocrud`, {
       method: "POST", // or 'PUT'
       headers: {
@@ -94,7 +97,7 @@ const Todo = () => {
     });
     const res = await todo.json();
     settodo('');
-    getallTodo();
+    getallTodo(UserDataSelector.id);
   }
   else{
     toast.error('Please enter a title before adding todo!', {
@@ -128,7 +131,7 @@ const EditTodo=async()=>{
     setOpen(false);
     setEdittitle('');
     seteditid('');
-    getallTodo();
+    getallTodo(UserDataSelector.id);
   }
   else{
     toast.error('Please add a edited title before adding todo', {
@@ -157,7 +160,7 @@ const DeleteTodo=async()=>{
       body: JSON.stringify(data),
     });
     const res = await todo.json();
-    getallTodo();
+    getallTodo(UserDataSelector.id);
     setOpenconfirm(false);
     setedelid('');
 }
@@ -174,7 +177,7 @@ if(res==true){
 });
 const resp= await todo.json();
 console.log(resp);
-getallTodo();
+getallTodo(UserDataSelector.id);
 }
 }
 
@@ -227,7 +230,7 @@ theme="light"
          <div className='mx-6 h-1 w-52 bg-green-600 rounded-xl '></div>
          <div className='flex flex-wrap overflow-hidden'>
           {/* todo starts here */}
-          {alltodos.length!=0?alltodos.slice(0).reverse().map((item)=>{return <div className=' w-96 overflow-hidden' key={item._id}>
+          {alltodos.length>0?alltodos.slice(0).reverse().map((item)=>{return <div className=' w-96 overflow-hidden' key={item._id}>
          <div
   className="relative block overflow-hidden rounded-lg border border-gray-100 p-4 sm:p-6 lg:p-8 mx-2 my-4"
 >

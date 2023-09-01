@@ -1,3 +1,4 @@
+import React from "react";
 const Menuitems = [
   {
     title: "Dashbaord",
@@ -32,7 +33,7 @@ const Menuitems = [
   {
     title: "To-Dos",
     icon: "list",
-    href: "/admin/Todo",
+    href: `/admin/Todo`,
   },
   {
     title: "Calendar",
@@ -40,7 +41,7 @@ const Menuitems = [
     href: "/admin/Calendar",
   },
   {
-    title: "Study Material",
+    title: "Text Editor",
     icon: "type",
     href: "/table",
   },

@@ -130,6 +130,7 @@ const Meeting = () => {
 
    
  useEffect(() => {
+  alert("TEMPORARAY DOWN")
     if(router.query.roomID){
         setnham(false);
         setham(true);
@@ -230,7 +231,7 @@ const Meeting = () => {
 </section>
     
     </FullLayout>}
-    <script src="https://unpkg.com/@zegocloud/zego-uikit-prebuilt/zego-uikit-prebuilt.js"></script>
+    {/* <script src="https://unpkg.com/@zegocloud/zego-uikit-prebuilt/zego-uikit-prebuilt.js"></script> */}
       </ThemeProvider> 
   );
 };
