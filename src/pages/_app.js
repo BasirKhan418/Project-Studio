@@ -6,7 +6,7 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import Router, { useRouter } from 'next/router'
 import { Provider } from 'react-redux'
-import Storedata from '../store/Storedata'
+import Storedata from '../store/Storedata';
 export default function App({ Component, pageProps }) {
   const router=useRouter();
   const [progress, setProgress] = useState(0)
