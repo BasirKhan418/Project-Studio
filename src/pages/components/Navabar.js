@@ -75,25 +75,25 @@ const Navbar = ({
                 Home
               </li>
             </Link>
-            <Link href={"/rooms"}>
+            <Link href={"/"}>
               {" "}
               <li className="text-lg my-2 font-semibold hover:border-2 hover:border-blue-600 p-1 hover:rounded transition duration-150 ease-out hover:ease-in">
                 Features
               </li>
             </Link>
-            <Link href={"/foods"}>
+            <Link href={"/"}>
               {" "}
               <li className="text-lg my-2 font-semibold  hover:border-2 hover:border-blue-600 p-1 hover:rounded transition duration-150 ease-out hover:ease-in">
                 Pricing
               </li>
             </Link>
-            <Link href={"/gallery"}>
+            <Link href={"/"}>
               {" "}
               <li className="text-lg my-2 font-semibold  hover:border-2 hover:border-blue-600 p-1hover:rounded transition duration-150 ease-out hover:ease-in">
                 About
               </li>
             </Link>
-            <Link href={"/contactus"}>
+            <Link href={"/"}>
               {" "}
               <li className="text-lg my-2 font-semibold  hover:border-2 hover:border-blue-600 p-1 hover:rounded transition duration-150 ease-out hover:ease-in">
                Contact Us
@@ -121,25 +121,25 @@ const Navbar = ({
                 Home
               </li>
             </Link>
-            <Link href={"/rooms"}>
+            <Link href={"/"}>
               {" "}
               <li onClick={()=>{setSidebarham(false)}} className=" dark:text-white text-lg my-2 font-semibold hover:bg-blue-100 hover:rounded transition duration-150 ease-out hover:ease-in lg:hidden">
                 Features
               </li>
             </Link>
-            <Link href={"/foods"}>
+            <Link href={"/"}>
               {" "}
               <li onClick={()=>{setSidebarham(false)}} className=" dark:text-white text-lg my-2 font-semibold  hover:bg-blue-100 hover:rounded transition duration-150 ease-out hover:ease-in lg:hidden">
                 Pricing
               </li>
             </Link>
-            <Link href={"/contactus"}>
+            <Link href={"/"}>
               {" "}
               <li onClick={()=>{setSidebarham(false)}} className="dark:text-white text-lg my-2 font-semibold  hover:bg-blue-100 hover:rounded transition duration-150 ease-out hover:ease-in lg:hidden">
                About
               </li>
             </Link>
-            <Link onClick={()=>{setSidebarham(false)}} href={"/contactus"}>
+            <Link onClick={()=>{setSidebarham(false)}} href={"/"}>
               {" "}
               <li className="dark:text-white text-lg my-2 font-semibold  hover:bg-blue-100 hover:rounded transition duration-150 ease-out hover:ease-in lg:hidden" >
                Contact Us

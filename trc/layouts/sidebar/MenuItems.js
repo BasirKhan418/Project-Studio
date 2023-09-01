@@ -8,17 +8,17 @@ const Menuitems = [
   {
     title: "Projects",
     icon: "file-text",
-    href: "/admin/projects",
+    href: "/admin",
   },
   {
     title: "Presentations",
     icon: "monitor",
-    href: "/forms",
+    href: "/admin",
   },
   {
     title: "Assignments",
     icon: "edit",
-    href: "/alerts",
+    href: "/admin",
   },
   {
     title: "Chats",
@@ -43,7 +43,7 @@ const Menuitems = [
   {
     title: "Text Editor",
     icon: "type",
-    href: "/table",
+    href: "/admin",
   },
 ];
 
