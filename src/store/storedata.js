@@ -1,9 +1,9 @@
 import React from "react";
 import { configureStore } from "@reduxjs/toolkit";
 import userdata from "./userdata";
-const storedata = configureStore({
+const Storedata = configureStore({
     reducer: {
         userdata: userdata,
     },
 });
-export default storedata;
+export default Storedata;
