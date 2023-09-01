@@ -6,7 +6,7 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import Router, { useRouter } from 'next/router'
 import { Provider } from 'react-redux'
-import Storedata from '../store/Storedata';
+import storedata from '../store/Storedata';
 export default function App({ Component, pageProps }) {
   const router=useRouter();
   const [progress, setProgress] = useState(0)
@@ -18,7 +18,7 @@ export default function App({ Component, pageProps }) {
       setProgress(100)
     })
   },[])
-  return <> <Provider store={Storedata}><LoadingBar
+  return <> <Provider store={storedata}><LoadingBar
   color='blue'
   waitingTime={400}
   progress={progress}
