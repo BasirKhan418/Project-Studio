@@ -43,7 +43,7 @@ const Menuitems = [
   {
     title: "Text Editor",
     icon: "type",
-    href: "/admin",
+    href: "/admin/Texteditor",
   },
 ];
 
