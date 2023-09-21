@@ -1,4 +1,4 @@
-# Project Studio Readme
+# Project Studio 
 
 ## Introduction
 
