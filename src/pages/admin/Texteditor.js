@@ -20,7 +20,7 @@ const QuillNoSSRWrapper = dynamic(import('react-quill'), {
 
   const modules = {
     toolbar: [
-      [{ header: '1' }, { header: '2' }, { font: [] }],
+      [{ header: '1' }, { header: '2' },{ font: [] }],
       [{ size: [] }],
       ['bold', 'italic', 'underline', 'strike', 'blockquote'],
       [
@@ -60,7 +60,7 @@ const QuillNoSSRWrapper = dynamic(import('react-quill'), {
     const [value, setValue] = useState('');
     const handleTextChange = (content, delta, source, editor) => {
         // Update the value state with the HTML content of the editor
-        setValue(editor.getHTML());
+        setValue(delta);
       };
   return (
     

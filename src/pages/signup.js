@@ -85,8 +85,8 @@ console.log(response)
       setEmail('');
       setPassword('');
       setnPassword('');
-      setAlert(true)
-      toast.success('Your account has been created successfully.Please Complete step 2', {
+     
+      toast.success('Your account has been created successfully.Please Login', {
         position: "top-left",
         autoClose: 2000,
         hideProgressBar: false,
@@ -97,7 +97,7 @@ console.log(response)
         theme: "light",
         });
         setTimeout(()=>{
-          router.push(`/postsignup?id=${response.id}`)
+          router.push("/login")
           },1000)
         }
     else if(response.success==false){
@@ -206,7 +206,7 @@ theme="light"
       <section className="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-[90vh] xl:col-span-6">
         <img
           alt="Night"
-          src="/signin.jpg"
+          src="https://res.cloudinary.com/dawzncoau/image/upload/v1695495555/signin_mrpomy.jpg"
           className="absolute inset-0 w-full h-full object-cover opacity-80"
         />
         <div className="hidden lg:relative lg:block lg:p-12">

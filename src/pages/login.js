@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import { useRouter } from 'next/router';
+import toast, { Toaster } from 'react-hot-toast'
 import Spinner from './components/Spinner';
 import Image from 'next/image';
 import Head from 'next/head';
-import Alert from './Alert';
 // import { useMyContext } from '../context/Allstate';
 const Login = () => {
   const[loading,setLoading]=useState(false);
@@ -48,46 +47,27 @@ setPassword(e.target.value)
     setEmail('');
     setPassword('');
     if(response.success){
-      setAlert(true);
-      toast.success('Logged in Successfully', {
-        position: "top-left",
-        autoClose: 1500,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        });
+      
+      toast.success("Logged in successfully", {
+        position: "top-center",
+    });
+     
         localStorage.setItem('myprappuser',JSON.stringify({token:response.token,email:response.email}));
         setTimeout(()=>{
           router.push('/admin')
           },2000)
     }
     else if(!response.success){
-      toast.error(response.message, {
-        position: "top-left",
-        autoClose: 1000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        });
+      toast.error(`${response.message}`, {
+        position: "top-right",
+    });
+
     }
   }
   else{
     setLoading(false)
-    toast.error("Please enter email and password before login", {
-      position: "top-left",
-      autoClose: 1000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
+    toast.error("Something went wrong ! Please try again after some time.", {
+      position: "top-right",
       });
   }
          
@@ -106,21 +86,9 @@ setPassword(e.target.value)
   }
   return (
     <>
-    {  alert?<Alert message="Logged in Successfully" desc="Welcome back! You've successfully logged in."/>:""
-      }
+   
     {loading?<Spinner/>:<div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 flex-wrap">
-      <ToastContainer
-position="top-left"
-autoClose={5000}
-hideProgressBar={false}
-newestOnTop={false}
-closeOnClick
-rtl={false}
-pauseOnFocusLoss
-draggable
-pauseOnHover
-theme="light"
-/>
+      <Toaster/>
   {/* <div className="sm:mx-auto sm:w-full sm:max-w-sm">
 
   <Head>
@@ -281,7 +249,7 @@ theme="light"
     </div>
   </div>
   <div className='w-[100vw] h-[55vh] lg:h-[90vh] lg:w-[50vw]'>
-  <img alt="logo" src="/login2.jpg" className='m-auto w-full h-full object-cover'/>
+  <img alt="logo" src="https://res.cloudinary.com/dawzncoau/image/upload/v1695495544/login2_ylddpu.jpg" className='m-auto w-full h-full object-cover'/>
   </div>
 </>
 

@@ -1,35 +1,64 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useState,useEffect } from 'react'
 const Hero = () => {
   return (
     <>
-    
-      <section className="bg-white dark:bg-gray-900">
-      <video src=
-"/bg6.mp4"
-            autoPlay="{true}" loop muted
-            className=" 
-             object-cover z-0 h-[100vh] w-[100vw]">
-        </video>
-    <div className="res grid max-w-screen-xl px-4 py-6 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 absolute top-32 left-32 ">
-    
-        <div className="mr-auto place-self-center lg:col-span-7">
-            <h1 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white text-white ">A Ultimate <span className='text-blue-700'>Project Management App</span></h1>
-            <p className="dark:text-white max-w-2xl mb-6 font-light text-white lg:mb-8 md:text-lg lg:text-xl ">Maximize productivity and efficiency with our Ultimate Project Management App. Streamline, collaborate, and conquer your projects effortlessly.</p>
-            <Link href="/signup" className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
-                Get started
-                <svg className="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
-            </Link>
-            <Link href="/" className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white border border-blue-600 rounded-lg hover:bg-black focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
-                Explore More
-            </Link> 
+        <div className='relative' >
+            <div className='absolute inset-0 blur-xl h-[100vh]' style={{ background: "linear-gradient(143.6deg, rgba(192, 132, 252, 0) 20.79%, rgba(232, 121, 249, 0.26) 40.92%, rgba(204, 171, 238, 0) 70.35%)" }}></div>
+            <div className='relative'>
+                <section>
+                    <div className="max-w-screen-xl mx-auto px-4 py-32 gap-12 text-gray-600 overflow-hidden md:px-8 md:flex">
+                        <div className='flex-none space-y-5 max-w-xl'>
+                            <a href="javascript:void(0)" className='inline-flex gap-x-6 items-center rounded-full p-1 pr-6 border text-sm font-medium duration-150 hover:bg-white'>
+                                <span className='inline-block rounded-full px-3 py-1 bg-indigo-600 text-white'>
+                                    News
+                                </span>
+                                <p className='flex items-center'>
+                                    Read the launch post from here
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
+                                        <path fillRule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clipRule="evenodd" />
+                                    </svg>
+                                </p>
+                            </a>
+                            <h1 className="text-4xl text-gray-800 font-extrabold sm:text-5xl">
+                            A Ultimate Project Management App
+                            </h1>
+                            <p>
+                            Maximize productivity and efficiency with our Ultimate Project Management App. Streamline, collaborate, and conquer your projects effortlessly.
+                            </p>
+                            <div className='flex items-center gap-x-3 sm:text-sm'>
+                                <a href="javascript:void(0)" className="flex items-center justify-center gap-x-1 py-2 px-4 text-white font-medium bg-gray-800 duration-150 hover:bg-gray-700 active:bg-gray-900 rounded-full md:inline-flex">
+                                    Get started
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
+                                        <path fillRule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clipRule="evenodd" />
+                                    </svg>
+                                </a>
+                                <a href="javascript:void(0)" className="flex items-center justify-center gap-x-1 py-2 px-4 text-gray-700 hover:text-gray-900 font-medium duration-150 md:inline-flex">
+                                    Contact sales
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
+                                        <path fillRule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clipRule="evenodd" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div className='flex-1 flex-wrap py-4 sm:h-50 sm:w-50 justify-center'>
+                            {/* Replace with your image */}
+                            <img src="https://res.cloudinary.com/floatui/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1669333920/undraw_progressive_app_m-9-ms_oftfv5.jpg" className="max-w-xl object-cover" />
+                        </div>
+                    </div>
+                   
+                </section>
+                
+                <section>
+                    
+                </section>
+            </div>
+            
         </div>
-        <div className=" lg:mt-0 lg:col-span-5 lg:flex mb-8">
-            <img src="/pr2.png" alt="mockup" className='h-[50vh] w-[50vh]object-cover'/>
-        </div>                
-    </div>
-</section>
+        
+
     </>
   )
 }

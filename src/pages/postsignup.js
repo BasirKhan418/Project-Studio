@@ -11,7 +11,7 @@ import Image
 //  import { useMyContext } from '../context/Allstate';
  import Alert from './Alert';
 const Signup = () => {
-  const {alert,setAlert}=useState(false);
+ 
   const[loading, setLoading]=useState(false);
   const [id,setId]=useState('');
   const [bio,setbio]=useState('');
@@ -23,7 +23,7 @@ const Signup = () => {
     router.push('/admin');
     }
     setId(router.query.id);
-    setAlert(false);
+   
   })
 
 
@@ -116,7 +116,7 @@ const Signup = () => {
 
     if(response.success){
       setLoading(false)
-     setAlert(true);
+  
       toast.success('Your account has been created successfully.', {
         position: "top-left",
         autoClose: 2000,
@@ -149,7 +149,6 @@ const Signup = () => {
   
   return (
     <>
-    {alert?<Alert message='Your account has been created successfully.' desc='Please wait while we redirecting to admin dashboard'/>:""}
     {loading?<Spinner/>:<div>
       <ToastContainer
 position="top-left"

@@ -8,27 +8,38 @@ import Services from './components/Services'
 import Team from './components/Team'
 import Cta from './components/Cta'
 import NewsLater from './components/NewsLater'
-
+import Analytics from './components/Analytics'
+import Services2 from './components/Services2'
+import Blog from './components/Blog'
 const Index = () => {
 
   return (
-    <>
+    <div>
       <Head>
         <title>Project-Management-App</title>
       </Head>
       <div>
       <Hero/>
-      <Features/>
+      <Analytics/>
+  
       <Services/>
+      <Services2/>
+      <Features/>
+      <Blog/>
       <Cta/>
       <Pricing/>
       <Features2/>
       
       <Team/>
-      
+      <div className=''>
+        <h1 className='text-center text-4xl font-bold '>Contact <span className='text-blue-600'>Us</span></h1>
+        <div className='w-40 h-2 bg-indigo-600 rounded-full'>
+
+        </div>
       <NewsLater/>
       </div>
-    </>
+      </div>
+    </div>
   )
 }
 
