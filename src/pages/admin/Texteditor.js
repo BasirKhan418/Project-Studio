@@ -66,7 +66,7 @@ const QuillNoSSRWrapper = dynamic(import('react-quill'), {
     
     <ThemeProvider theme={theme}>
       <style jsx global>{`
-        footer {
+        .footer {
           display: none;
         }
         .Navbar {

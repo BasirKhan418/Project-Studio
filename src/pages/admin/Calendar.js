@@ -189,7 +189,7 @@ if(e.target.name=="eventval"){
   return (
     <ThemeProvider theme={theme}>
       <style jsx global>{`
-        footer {
+        .footer {
           display: none;
         }
         .Navbar {

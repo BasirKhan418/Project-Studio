@@ -49,7 +49,7 @@ setPassword(e.target.value)
     if(response.success){
       
       toast.success("Logged in successfully", {
-        position: "top-center",
+        position: "top-right",
     });
      
         localStorage.setItem('myprappuser',JSON.stringify({token:response.token,email:response.email}));
@@ -86,9 +86,9 @@ setPassword(e.target.value)
   }
   return (
     <>
-   
+     <Toaster/>
     {loading?<Spinner/>:<div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 flex-wrap">
-      <Toaster/>
+      
   {/* <div className="sm:mx-auto sm:w-full sm:max-w-sm">
 
   <Head>

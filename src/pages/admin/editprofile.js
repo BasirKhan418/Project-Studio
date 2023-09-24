@@ -158,7 +158,7 @@ setEmail(user.email);
     <div>
       <ThemeProvider theme={theme}>
         <style jsx global>{`
-        footer {
+        .footer {
           display:none;
         }
         .Navbar{

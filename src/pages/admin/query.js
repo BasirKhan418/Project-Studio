@@ -7,7 +7,7 @@ const Query = () => {
       <ThemeProvider theme={theme}>
        <FullLayout>
        <style jsx global>{`
-        footer {
+        .footer {
           display:none;
         }
         .Navbar{

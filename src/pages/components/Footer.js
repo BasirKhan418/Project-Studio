@@ -4,7 +4,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div className='z-10'>
+    <div className='z-10 footer'>
        <div className="mt-16 bg-indigo-600 text-white">
         <div className='relative'>
        

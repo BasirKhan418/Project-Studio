@@ -25,7 +25,7 @@ const Navbar = ({logout,user}) => {
   }, []);
   return (
 
-    <div className='font-light sticky top-0 z-50 '>
+    <div className='font-light sticky top-0 z-50 Navbar'>
               
       <nav className=" bg-white dark:bg-white flex justify-center items-center w-full shadow-md z-30 h-20">
     <div className="container px-2 py-2 mx-auto">
