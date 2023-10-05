@@ -1,7 +1,7 @@
 import React from "react";
 const Menuitems = [
   {
-    title: "Dashbaord",
+    title: "Dashboard",
     icon: "home",
     href: "/admin",
   },

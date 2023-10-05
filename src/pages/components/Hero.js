@@ -1,66 +1,91 @@
-import React from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import { useState,useEffect } from 'react'
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 const Hero = () => {
   return (
-    <>
-        <div className='relative' >
-            <div className='absolute inset-0 blur-xl h-[100vh]' style={{ background: "linear-gradient(143.6deg, rgba(192, 132, 252, 0) 20.79%, rgba(232, 121, 249, 0.26) 40.92%, rgba(204, 171, 238, 0) 70.35%)" }}></div>
-            <div className='relative'>
-                <section>
-                    <div className="max-w-screen-xl mx-auto px-4 py-32 gap-12 text-gray-600 overflow-hidden md:px-8 md:flex">
-                        <div className='flex-none space-y-5 max-w-xl'>
-                            <a href="javascript:void(0)" className='inline-flex gap-x-6 items-center rounded-full p-1 pr-6 border text-sm font-medium duration-150 hover:bg-white'>
-                                <span className='inline-block rounded-full px-3 py-1 bg-indigo-600 text-white'>
-                                    News
-                                </span>
-                                <p className='flex items-center'>
-                                    Read the launch post from here
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
-                                        <path fillRule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clipRule="evenodd" />
-                                    </svg>
-                                </p>
-                            </a>
-                            <h1 className="text-4xl text-gray-800 font-extrabold sm:text-5xl">
-                            A Ultimate Project Management App
-                            </h1>
-                            <p>
-                            Maximize productivity and efficiency with our Ultimate Project Management App. Streamline, collaborate, and conquer your projects effortlessly.
-                            </p>
-                            <div className='flex items-center gap-x-3 sm:text-sm'>
-                                <a href="javascript:void(0)" className="flex items-center justify-center gap-x-1 py-2 px-4 text-white font-medium bg-gray-800 duration-150 hover:bg-gray-700 active:bg-gray-900 rounded-full md:inline-flex">
-                                    Get started
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
-                                        <path fillRule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clipRule="evenodd" />
-                                    </svg>
-                                </a>
-                                <a href="javascript:void(0)" className="flex items-center justify-center gap-x-1 py-2 px-4 text-gray-700 hover:text-gray-900 font-medium duration-150 md:inline-flex">
-                                    Contact sales
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
-                                        <path fillRule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clipRule="evenodd" />
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                        <div className='flex-1 flex-wrap py-4 sm:h-50 sm:w-50 justify-center'>
-                            {/* Replace with your image */}
-                            <img src="https://res.cloudinary.com/floatui/image/upload/c_pad,b_auto:predominant,fl_preserve_transparency/v1669333920/undraw_progressive_app_m-9-ms_oftfv5.jpg" className="max-w-xl object-cover" />
-                        </div>
-                    </div>
-                   
-                </section>
-                
-                <section>
-                    
-                </section>
-            </div>
-            
-        </div>
+    <div>
         
+        <img
+        className="absolute top-0 left-0"
+        style={{}}
+        src="grid.svg"
+        alt="helo"
+      />
+      <div
+        style={{
+          animationDuration: "5s",
+        }}
+        className="absolute w-[300px] h-[400px] md:w-[700px] md:h-[800px] md:animate-spin rounded-full -top-1/2 left-0 md:left-60 bg-gradient-to-r from-slate-900 via-purple-900/60 to-slate-900 -z-50 blur-3xl"
+      ></div>
+      <div className="overflow-x-hidden bg-none relative">
+        <style jsx global>{`
+          @import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Lato:ital,wght@1,900&family=Martel+Sans:wght@200&family=Poppins&family=Ubuntu:wght@500&display=swap");
 
-    </>
-  )
-}
+          .hero-text {
+            font-family: "Dela Gothic One", cursive;
+            font-family: "Lato", sans-serif;
+            font-family: "Martel Sans", sans-serif;
+            font-family: "Poppins", sans-serif;
+            font-family: "Ubuntu", sans-serif;
+          }
+        `}</style>
 
-export default Hero
+        <section className="pt-12 bg-none sm:pt-16 ">
+          <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+            <div className="max-w-2xl mx-auto text-center ">
+              <h1 className="px-6 lg:text-lg text-gray-200 sm:text-sm text-sm">
+                Welcome to Project Studio 🧑‍💻
+              </h1>
+              <p className="mt-5  hero-text font-bold leading-tight text-white sm:leading-tight sm:text-5xl lg:text-6xl lg:leading-normal text-2xl">
+                One Stop Solution For
+                {/* <span className="bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] blur-lg filter opacity-30 w-full h-full absolute inset-0"></span> */}
+                <span className="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-transparent bg-clip-text">
+                  {" "}
+                  Project Mangement{" "}
+                </span>
+              </p>
+
+              <div className="px-8 sm:items-center sm:justify-center sm:px-0 sm:space-x-5 sm:flex mt-9">
+                <Link
+                  href="/docs/Alldocs"
+                  title=""
+                  className="inline-flex  items-center justify-center w-full px-8 py-3 text-lg font-bold text-white transition-all duration-200 bg-purple-600 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-purple-950 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
+                  role="button"
+                >
+                  Explore More
+                </Link>
+
+                 <Link 
+                  href="/signup"
+                  title=""
+                  className="inline-flex items-center justify-center w-full px-6 py-3 mt-4 text-lg font-bold text-gray-200 transition-all duration-200 border-2 border-gray-400 sm:w-auto sm:mt-0 rounded-xl font-pj focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 hover:bg-gray-900 focus:bg-gray-900 hover:text-white focus:text-white hover:border-gray-900 focus:border-gray-900"
+                  role="button"
+                >
+                 
+                  Get Started
+                  <Image src="/getstarted.png" alt="getstarted png" width={20} height={20} className="mx-2"/>
+                </Link> 
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:max-w-6xl mx-auto my-10 sm:max-w-xl md:max-w-4xl max-w-4xl flex justify-center items-center flex-col">
+    <div class="w-full h-11 relative rounded-t-lg bg-blue-900 flex overflow-hidden justify-start items-center space-x-1.5 px-2">
+        <div class="absolute w-full h-full inset-0 bg-black opacity-50"></div>
+        <span class="relative w-3 h-3 border-2 rounded-full border-red-400"></span>
+        <span class="relative w-3 h-3 border-2 rounded-full border-yellow-400"></span>
+        <span class="relative w-3 h-3 border-2 rounded-full border-green-400"></span>
+       
+    </div>
+    <div class="relative bg-blue-600 border-t-0 w-full h-auto border-blue-900">
+        <img src="https://res.cloudinary.com/dawzncoau/image/upload/v1696520978/psdashboard_dgfkc8.png" alt="" />
+    </div>
+</div>
+        </section>
+      </div>
+    
+    </div>
+  );
+};
+
+export default Hero;

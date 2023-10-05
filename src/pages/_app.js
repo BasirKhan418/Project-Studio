@@ -13,6 +13,9 @@ export default function App({ Component, pageProps }) {
   const [progress, setProgress] = useState(0)
   const [key , setKey] = useState(0)
   const [user,setUser]=useState(false);
+  useEffect(() => {
+    import("preline");
+  }, []);
   useEffect(()=>{
     router.events.on('routeChangeStart',()=>{
       setProgress(40)

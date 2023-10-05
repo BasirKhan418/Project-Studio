@@ -3,7 +3,18 @@ import React from 'react'
 const Analytics = () => {
   return (
     <div>
-       <section className='inset-0 ' >
+        <style jsx global>{`
+          @import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Lato:ital,wght@1,900&family=Martel+Sans:wght@200&family=Poppins&family=Ubuntu:wght@500&display=swap");
+
+          .font {
+            font-family: "Dela Gothic One", cursive;
+            font-family: "Lato", sans-serif;
+            font-family: "Martel Sans", sans-serif;
+            font-family: "Poppins", sans-serif;
+            font-family: "Ubuntu", sans-serif;
+          }
+        `}</style>
+       <section className='inset-0 font' >
                 <div className="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
       <div className="grid gap-5 row-gap-8 lg:grid-cols-2">
         <div className="flex flex-col justify-center">
@@ -13,7 +24,7 @@ const Analytics = () => {
                 Brand new
               </p>
             </div>
-            <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+            <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
               Innovative analytics
               <br className="hidden md:block" />
               that you{' '}
@@ -21,7 +32,7 @@ const Analytics = () => {
                 will love
               </span>
             </h2>
-            <p className="text-base text-gray-700 md:text-lg">
+            <p className="text-base text-white md:text-lg">
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
               accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
               quae. explicabo.

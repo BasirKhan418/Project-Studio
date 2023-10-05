@@ -16,6 +16,8 @@
 }
 
 body {
+  background-color: black;
+scroll-behavior: smooth;
 
 }
 @media(max-width: 992px){
@@ -36,44 +38,7 @@ body {
        left: 20px;
       }
        }
-       .waveform {
-        --uib-size: 40px;
-        --uib-speed: 1s;
-        --uib-color: black;
-        --uib-line-weight: 3.5px;
-      
-        display: flex;
-        flex-flow: row nowrap;
-        align-items: center;
-        justify-content: space-between;
-        width: var(--uib-size);
-        height: calc(var(--uib-size) * 0.9);
-      }
-      
-      .waveform__bar {
-        width: var(--uib-line-weight);
-        height: 100%;
-        background-color: var(--uib-color);
-      }
-      
-      .waveform__bar:nth-child(1) {
-        animation: grow var(--uib-speed) ease-in-out
-          calc(var(--uib-speed) * -0.45) infinite;
-      }
-      
-      .waveform__bar:nth-child(2) {
-        animation: grow var(--uib-speed) ease-in-out
-          calc(var(--uib-speed) * -0.3) infinite;
-      }
-      
-      .waveform__bar:nth-child(3) {
-        animation: grow var(--uib-speed) ease-in-out
-          calc(var(--uib-speed) * -0.15) infinite;
-      }
-      
-      .waveform__bar:nth-child(4) {
-        animation: grow var(--uib-speed) ease-in-out infinite;
-      }
+  
       
       @keyframes grow {
         0%,
@@ -85,3 +50,64 @@ body {
           transform: scaleY(1);
         }
       }
+      .animate-floating1 {
+        animation: floating 1s ease-in-out infinite;
+      }
+      @keyframes floating {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(
+            -8px
+          ); /* Adjust this value to control the amount of movement */
+        }
+      }   
+      .race-by {
+        --uib-size: 100px;
+        --uib-speed: 1.4s;
+        --uib-color: white;
+        --uib-line-weight: 5px;
+      
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: var(--uib-line-weight);
+        width: var(--uib-size);
+        border-radius: calc(var(--uib-line-weight) / 2);
+        overflow: hidden;
+        transform: translate3d(0, 0, 0);
+      }
+      
+      .race-by::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: var(--uib-color);
+        opacity: 0.1;
+      }
+      
+      .race-by::after {
+        content: "";
+        height: 100%;
+        width: 100%;
+        border-radius: calc(var(--uib-line-weight) / 2);
+        animation: raceBy var(--uib-speed) ease-in-out infinite;
+        transform: translateX(-100%);
+        background-color: var(--uib-color);
+      }
+      
+      @keyframes raceBy {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(100%);
+        }
+      }
+      

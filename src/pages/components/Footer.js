@@ -5,11 +5,11 @@ import React from 'react'
 const Footer = () => {
   return (
     <div className='z-10 footer'>
-       <div className="mt-16 bg-indigo-600 text-white">
+       <div className="mt-16 bg-gray-800 text-white">
         <div className='relative'>
        
       <svg
-        className="absolute top-0 w-full h-6 -mt-5 sm:-mt-10 sm:h-16 text-indigo-600"
+        className="absolute top-0 w-full h-6 -mt-5 sm:-mt-10 sm:h-16 text-gray-800"
         preserveAspectRatio="none"
         viewBox="0 0 1440 54"
       >
@@ -30,7 +30,7 @@ const Footer = () => {
               className="inline-flex items-center"
             >
               <span className="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">
-              <img className="w-24 h-auto lg:w-28 lg:h-auto" src="/prapplogo.png" alt=""/>
+              <img className="w-24 h-auto lg:w-28 lg:h-auto" src="/projectstudio.png" alt=""/>
               Project Studio
               </span>
             </Link>
@@ -221,7 +221,7 @@ const Footer = () => {
         </div>
         <div className="flex flex-col justify-between pt-5 pb-10 border-t border-deep-purple-accent-200 sm:flex-row">
           <p className="text-sm text-gray-100">
-            © Copyright 2023 E-Revive.com . All rights reserved.
+            © Copyright 2023 Projectstudio.com . All rights reserved.
           </p>
           <div className="flex items-center mt-4 space-x-4 sm:mt-0 ">
             <Link

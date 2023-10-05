@@ -5,6 +5,8 @@ import { useRouter } from 'next/router';
 import toast, { Toaster } from 'react-hot-toast'
 import Spinner from './components/Spinner';
 import Image from 'next/image';
+import { AiFillEye } from "react-icons/ai";
+import { AiFillEyeInvisible } from "react-icons/ai";
 import Head from 'next/head';
 // import { useMyContext } from '../context/Allstate';
 const Login = () => {
@@ -19,6 +21,7 @@ const Login = () => {
   const [email,setEmail]=useState('');
   const [password,setPassword]=useState('');
   const[vpassword,setVpassword]=useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const handleChange=(e)=>{
   if(e.target.name=="email"){
     setEmail(e.target.value)
@@ -85,175 +88,180 @@ setPassword(e.target.value)
   
   }
   return (
-    <>
-     <Toaster/>
-    {loading?<Spinner/>:<div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 flex-wrap">
-      
-  {/* <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+     <>
+      <style jsx global>{`
+        .animate-img {
+          background-image: url("/sphere.webp");
+          background-size: cover;
+          background-repeat: no-repeat;
+          z-index: -1;
+          transform: translateY(-50%);
+          position: absolute;
+          left: -30%;
+          bottom: auto;
+          right: auto;
+          top: 58%;
+          animation: rotate360 30s linear infinite; /* Adjust duration as needed */
+        }
+        @keyframes rotate360 {
+          0% {
+            transform: translateY(-50%) rotate(0deg);
+          }
+          100% {
+            transform: translateY(-50%) rotate(360deg);
+          }
+        }
+      `}</style>
 
-  <Head>
-      <title>Project Studio - Login Page</title>
-      <meta name="description" content='Login to our hotel booking and food delivery website to unlock exclusive deals on accommodations and enjoy the convenience of seamless food delivery. Discover a world of exceptional hospitality and culinary delights with our secure login process!'/>
-      <meta name="keywords" content="hotel booking, food delivery, accommodation, online reservations, gourmet dining, seamless service, delightful stay, convenient hospitality, doorstep delivery, culinary experience, vacation getaway, top-rated hotel, comfortable accommodations, exquisite cuisine, memorable retreat" />
-     </Head>
-  <Image alt="logo" src="/prapplogo.png" width={180} height={60} className='m-auto'/>
-    <h2 className="mt-6 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Login to your account</h2>
-  </div>
-
-  <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-    <form className="space-y-6" onSubmit={handleSubmit} method="POST">
-      <div>
-        <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">Email address</label>
-        <div className="mt-2">
-          <input onChange={handleChange} value={email} id="email" name="email" type="email" autoComplete="email" required className=" block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-amber-600 sm:text-sm sm:leading-6 p-2 peer ..."/>
-          {email.length==0?"":<p className="mt-2 invisible peer-invalid:visible text-pink-600 text-sm font-bold">
-      Please provide a valid email address.
-    </p>}
-        </div>
-      </div>
-
-      <div>
-        <div className="flex items-center justify-between">
-          <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">Password</label>
-          <div className="text-sm">
-            <Link href={"/forgot"} className="font-semibold text-blue-600 hover:text-blue-500">Forgot password?</Link>
-          </div>
-        </div>
-        <div className="mt-2">
-          <input id="password" onChange={handleChange} value={password}  name="password" type="password" autoComplete="current-password" required className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-amber-600 sm:text-sm sm:leading-6 p-2"/>
-        </div>
-      </div>
-
-      <div>
-        <button type="submit" className="flex w-full justify-center rounded-md bg-blue-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink-600">Login</button>
-      </div>
-    </form>
-
-    <p className="mt-10 text-center text-sm text-gray-500">
-      Not a member?
-      <Link href="/signup" className="font-semibold leading-6 text-blue-600 hover:text-blue-500"> Create your account</Link>
-    </p>
-  </div> */}
-
-<>
-  {/*
-  Heads up! 👋
-
-  Plugins:
-    - @tailwindcss/forms
-*/}
-  
-  <div className="mx-auto max-w-screen-xl px-4 py-6 sm:px-6 lg:px-6">
-
-    <div className="mx-auto max-w-lg">
-      <h1 className="text-center text-2xl font-bold text-indigo-600 sm:text-3xl">
-        Login to Project Studio
-      </h1>
-      <p className="mx-auto mt-4 max-w-md text-center text-gray-500">
-      Welcome back to Project Studio! Log in to your account to access personalized features, manage your profile, and engage with our vibrant community.
-      </p>
-      <div
-        className="mb-0 mt-6 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8"
-      >
-        <p className="text-center text-lg font-medium">
-          Sign in to your account
-        </p>
+      <div className="">
+        <img src="/sphere.webp" className=" animate-img w-100 h-full" />
         <div>
-          <label htmlFor="email" className="sr-only">
-            Email
-          </label>
-          <div className="relative">
-            <input
-              type="email"
-              onChange={handleChange} value={email} id="email" name="email" autoComplete='on'
-              className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-smb border-2"
-              placeholder="Enter email"
-            />
-            <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-4 w-4 text-gray-400"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
-                />
-              </svg>
-            </span>
-          </div>
-        </div>
-       
-        <div>
-        <div className="text-sm flex justify-end my-2">
-            <Link href={"/forgot"} className="font-semibold text-blue-600 hover:text-blue-500">Forgot password?</Link>
-          </div>
-          <label htmlFor="password" className="sr-only">
-            Password
-          </label>
-          <div className="relative">
-            <input
-              type={vpassword?"text":"password"}
-              className={`w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm border-2 `}
-              placeholder="Enter password"
-              id="password" onChange={handleChange} value={password} name='password' autoComplete='on'
-            />
-            <span className={`absolute inset-y-0 end-0 grid place-content-center px-4 `} onClick={()=>{
-            setVpassword(!vpassword);
-            }}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className={`h-4 w-4 text-gray-400 ${vpassword?"line-through":""}`}
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                />
-              </svg>
-            </span>
-          </div>
-         
-        </div>
-        <button
-       onClick={handleSubmit}
-          className="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white"
-        >
-          Sign in
-        </button>
-        {/* <p className="text-center text-sm text-gray-500">
-          No an account? 
-          <Link className="underline" href="/signup">
-            Sign up
-          </Link>
-        </p> */}
-        <p className="mt-10 text-center text-sm text-gray-500">
-      Not an account?
-      <Link href="/signup" className="font-semibold leading-6 text-blue-600 hover:text-blue-500"> Create your account</Link>
-    </p>
-      </div>
-    </div>
-  </div>
-  <div className='w-[100vw] h-[55vh] lg:h-[90vh] lg:w-[50vw]'>
-  <img alt="logo" src="https://res.cloudinary.com/dawzncoau/image/upload/v1695495544/login2_ylddpu.jpg" className='m-auto w-full h-full object-cover'/>
-  </div>
-</>
+          <Toaster />
+          {loading ? (
+            <Spinner />
+          ) : (
+            <div className="">
+              <div className="flex justify-center items-center min-h-screen">
+                <div className="flex items-center w-full max-w-md px-6 mx-auto lg:w-2/6">
+                  <div className="flex-1">
+                    <div className="text-center">
+                      <div className="flex justify-center mx-auto">
+                        <Image
+                          className=""
+                          src="/projectstudio.png"
+                          alt="Logo"
+                          height={120}
+                          width={120}
+                        />
+                      </div>
 
-</div>}
+                      <p className="mt-3 text-gray-200 text-2xl font-semibold dark:text-gray-200">
+                        Sign in to access your account
+                      </p>
+                    </div>
+
+                    <div className="mt-8">
+                      <div>
+                        <label
+                          htmlFor="email"
+                          className="block mb-2 text-sm text-gray-200 dark:text-gray-200"
+                        >
+                          Email Address
+                        </label>
+                        <input
+                          type="email"
+                          name="email"
+                          id="email"
+                          value={email}
+                          onChange={handleChange}
+                          placeholder="example@example.com"
+                          className="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-800 dark:focus:border-blue-800 focus:ring-blue-800 focus:outline-none focus:ring focus:ring-opacity-40"
+                        />
+                      </div>
+
+                      <div className="mt-6 relative">
+                        <div className="flex justify-between mb-2">
+                          <label
+                            htmlFor="password"
+                            className="text-sm text-gray-200 dark:text-gray-200"
+                          >
+                            Password
+                          </label>
+                          <Link
+                            href={"/Forgot"}
+                            className="text-sm text-gray-400 focus:text-blue-500 hover:text-blue-500 hover:underline"
+                          >
+                            Forgot password?
+                          </Link>
+                        </div>
+
+                        <input
+                          type={showPassword ? "text" : "password"}
+                          name="password"
+                          id="password"
+                          value={password}
+                          onChange={handleChange}
+                          placeholder="Your Password"
+                          className="block w-full px-4 py-2 mt-2 text-black placeholder-gray-800 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-green-400 dark:focus:border-green-400 focus:ring-green-400 focus:outline-none focus:ring focus:ring-opacity-40 "
+                        />
+                        {showPassword ? (
+                          <AiFillEye
+                            className="absolute right-2 text-2xl text-gray-800 bottom-2"
+                            onClick={() => {
+                              setShowPassword(!showPassword);
+                            }}
+                          />
+                        ) : (
+                          <AiFillEyeInvisible
+                            className="absolute right-2 text-2xl text-gray-800 bottom-2"
+                            onClick={() => {
+                              setShowPassword(!showPassword);
+                            }}
+                          />
+                        )}
+                      </div>
+                      <div className="mt-6 ">
+                        <button
+                          onClick={handleSubmit}
+                          className=" w-full px-4 py-2 tracking-wide text-white transition-colors duration-300 transform bg-purple-600 rounded-lg hover:bg-purple-800 focus:outline-none focus:bg-green-400 focus:ring focus:ring-green-300 focus:ring-opacity-50"
+                        >
+                          Sign in
+                        </button>
+                      </div>
+                      <div className="">
+                        <p className="mt-4 text-center text-gray-200 dark:text-gray-400">
+                          or sign in with
+                        </p>
+
+                        <a
+                          className="flex items-center justify-center px-6 py-3 mt-4 text-gray-600 transition-colors duration-300 transform border rounded-lg dark:border-gray-700 dark:text-gray-200 hover:bg-gray-800 dark:hover:bg-gray-600 -z-20"
+                          onClick={() =>   toast.error("Sorry ! the site is in now beta verion this feature is currently unavailable and will be coming soon !", {
+                            position: "top-right",
+                        })}
+                        >
+                          <svg className="w-6 h-6 mx-2" viewBox="0 0 40 40">
+                            <path
+                              d="M36.3425 16.7358H35V16.6667H20V23.3333H29.4192C28.045 27.2142 24.3525 30 20 30C14.4775 30 10 25.5225 10 20C10 14.4775 14.4775 9.99999 20 9.99999C22.5492 9.99999 24.8683 10.9617 26.6342 12.5325L31.3483 7.81833C28.3717 5.04416 24.39 3.33333 20 3.33333C10.7958 3.33333 3.33335 10.7958 3.33335 20C3.33335 29.2042 10.7958 36.6667 20 36.6667C29.2042 36.6667 36.6667 29.2042 36.6667 20C36.6667 18.8825 36.5517 17.7917 36.3425 16.7358Z"
+                              fill="#FFC107"
+                            />
+                            <path
+                              d="M5.25497 12.2425L10.7308 16.2583C12.2125 12.59 15.8008 9.99999 20 9.99999C22.5491 9.99999 24.8683 10.9617 26.6341 12.5325L31.3483 7.81833C28.3716 5.04416 24.39 3.33333 20 3.33333C13.5983 3.33333 8.04663 6.94749 5.25497 12.2425Z"
+                              fill="#FF3D00"
+                            />
+                            <path
+                              d="M20 36.6667C24.305 36.6667 28.2167 35.0192 31.1742 32.34L26.0159 27.975C24.3425 29.2425 22.2625 30 20 30C15.665 30 11.9842 27.2359 10.5975 23.3784L5.16254 27.5659C7.92087 32.9634 13.5225 36.6667 20 36.6667Z"
+                              fill="#4CAF50"
+                            />
+                            <path
+                              d="M36.3425 16.7358H35V16.6667H20V23.3333H29.4192C28.7592 25.1975 27.56 26.805 26.0133 27.9758C26.0142 27.975 26.015 27.975 26.0158 27.9742L31.1742 32.3392C30.8092 32.6708 36.6667 28.3333 36.6667 20C36.6667 18.8825 36.5517 17.7917 36.3425 16.7358Z"
+                              fill="#1976D2"
+                            />
+                          </svg>
+
+                          <span className="mx-2 text-gray-200">
+                            Sign in with Google
+                          </span>
+                        </a>
+                      </div>
+
+                      <p className="mt-6 text-sm text-center text-gray-400">
+                        Don&#x27;t have an account yet?{" "}
+                        <Link
+                          href={"/signup?user=true"}
+                          className="text-purple-600 focus:outline-none focus:underline hover:underline"
+                        >
+                          Sign up
+                        </Link>
+                        .
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
     </>
   )
 }

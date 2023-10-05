@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import Head from 'next/head'
 import Hero from './components/Hero'
 import Features from './components/Features'
-import Features2 from './components/Features2'
 import Pricing from './components/Pricing'
 import Services from './components/Services'
 import Team from './components/Team'
@@ -26,13 +25,13 @@ const Index = () => {
       <Services2/>
       <Features/>
       <Blog/>
-      <Cta/>
+     
       <Pricing/>
-      <Features2/>
+      <Cta/>
       
       <Team/>
       <div className=''>
-        <h1 className='text-center text-4xl font-bold '>Contact <span className='text-blue-600'>Us</span></h1>
+        <h1 className='text-center text-4xl font-bold text-white '>Contact <span className='text-blue-600'>Us</span></h1>
         <div className='w-40 h-2 bg-indigo-600 rounded-full'>
 
         </div>

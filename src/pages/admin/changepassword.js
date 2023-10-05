@@ -104,7 +104,7 @@ theme="light"
 
 />
        <style jsx global>{`
-        footer {
+        .footer {
           display:none;
         }
         .Navbar{
