@@ -24,7 +24,7 @@ const Navbar = () => {
               <img
                 src="/projectstudio.png"
                 alt=""
-                className="h-5/6 w-28 "
+                className="sm:h-10 sm:w-10 lg:w-28 lg:h-28 w-10 h-10 md:h-24 md:w-24"
               />
             </Link>
             <div className="md:hidden">
