@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import toast,{Toaster} from "react-hot-toast";
 const Navbar = () => {
   const router = useRouter();
   const [user, setUser] = useState(null);
@@ -11,6 +12,7 @@ const Navbar = () => {
   }, []);
   return (
     <div className="sticky top-0 z-50 Navbar">
+      <Toaster/>
       <header className="flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full text-sm sm:h-10 lg:h-24">
         <nav
           className="mt-6 backdrop-blur-lg relative max-w-7xl w-full border border-gray-200 rounded-[36px] mx-2 py-3 px-4 md:flex md:items-center md:justify-between md:py-0 md:px-6 lg:px-8 xl:mx-auto bg-none"
@@ -126,9 +128,12 @@ const Navbar = () => {
               </Link>}
               {user&&<button
                 onClick={() => {
-                  localStorage.removeItem('DevToolzUser');
+                  localStorage.removeItem('myprappuser');
                   setUser(null);
                   router.push("/")
+                  toast.success("Logout in successfully", {
+                    position: "top-center",
+                });
                 }}
                 className="flex items-center gap-x-2 font-medium text-white hover:text-blue-600 md:border-l md:border-gray-300 md:my-6 md:pl-6 dark:border-gray-700 dark:text-gray-400 dark:hover:text-blue-500"
               >

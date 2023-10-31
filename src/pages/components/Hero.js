@@ -1,7 +1,19 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+import { set } from "mongoose";
+import { useEffect } from "react";
 const Hero = () => {
+  const [console,setConsole]=useState(false);
+  useEffect(()=>{
+    if(localStorage.getItem("myprappuser")){
+      setConsole(true);
+        }
+        else{
+          setConsole(false);
+        }
+  })
   return (
     <div>
         
@@ -55,7 +67,7 @@ const Hero = () => {
                   Explore More
                 </Link>
 
-                 <Link 
+                 {!console&&<Link 
                   href="/signup"
                   title=""
                   className="inline-flex items-center justify-center w-full px-6 py-3 mt-4 text-lg font-bold text-gray-200 transition-all duration-200 border-2 border-gray-400 sm:w-auto sm:mt-0 rounded-xl font-pj focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 hover:bg-gray-900 focus:bg-gray-900 hover:text-white focus:text-white hover:border-gray-900 focus:border-gray-900"
@@ -64,20 +76,30 @@ const Hero = () => {
                  
                   Get Started
                   <Image src="/getstarted.png" alt="getstarted png" width={20} height={20} className="mx-2"/>
-                </Link> 
+                </Link>} 
+                {console&&<Link 
+                  href="/admin"
+                  title=""
+                  className="inline-flex items-center justify-center w-full px-6 py-3 mt-4 text-lg font-bold text-gray-200 transition-all duration-200 border-2 border-gray-400 sm:w-auto sm:mt-0 rounded-xl font-pj focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 hover:bg-gray-900 focus:bg-gray-900 hover:text-white focus:text-white hover:border-gray-900 focus:border-gray-900"
+                  role="button"
+                >
+                 
+                  Go to Console
+                  <Image src="/getstarted.png" alt="getstarted png" width={20} height={20} className="mx-2"/>
+                </Link>}
               </div>
             </div>
           </div>
 
-          <div class="lg:max-w-6xl mx-auto my-10 sm:max-w-xl md:max-w-4xl max-w-4xl flex justify-center items-center flex-col">
-    <div class="w-full h-11 relative rounded-t-lg bg-blue-900 flex overflow-hidden justify-start items-center space-x-1.5 px-2">
-        <div class="absolute w-full h-full inset-0 bg-black opacity-50"></div>
-        <span class="relative w-3 h-3 border-2 rounded-full border-red-400"></span>
-        <span class="relative w-3 h-3 border-2 rounded-full border-yellow-400"></span>
-        <span class="relative w-3 h-3 border-2 rounded-full border-green-400"></span>
+          <div className="lg:max-w-6xl mx-auto my-10 sm:max-w-xl md:max-w-4xl max-w-4xl flex justify-center items-center flex-col">
+    <div className="w-full h-11 relative rounded-t-lg bg-blue-900 flex overflow-hidden justify-start items-center space-x-1.5 px-2">
+        <div className="absolute w-full h-full inset-0 bg-black opacity-50"></div>
+        <span className="relative w-3 h-3 border-2 rounded-full border-red-400"></span>
+        <span className="relative w-3 h-3 border-2 rounded-full border-yellow-400"></span>
+        <span className="relative w-3 h-3 border-2 rounded-full border-green-400"></span>
        
     </div>
-    <div class="relative bg-blue-600 border-t-0 w-full h-auto border-blue-900">
+    <div className="relative bg-blue-600 border-t-0 w-full h-auto border-blue-900">
         <img src="https://res.cloudinary.com/dawzncoau/image/upload/v1696520978/psdashboard_dgfkc8.png" alt="" />
     </div>
 </div>

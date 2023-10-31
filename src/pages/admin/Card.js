@@ -20,14 +20,14 @@ const Card = () => {
         </div>
     </div>
     <div className="flex items-center bg-white border rounded-sm overflow-hidden shadow">
-        <div className="p-4 bg-indigo-400"><Image src={"/approve.png"} height={46} width={46} alt="project" className='text-white'></Image></div>
+        <div className="p-4 bg-indigo-400"><Image src={"/assignment.png"} height={46} width={46} alt="project" className='text-white'></Image></div>
         <div className="px-4 text-gray-700">
             <h3 className="text-sm tracking-wider">Total Assignment</h3>
             <p className="text-3xl">142,334</p>
         </div>
     </div>
     <div className="flex items-center bg-white border rounded-sm overflow-hidden shadow">
-        <div className="p-4 bg-red-400"><Image src={"/credit1.png"} height={46} width={46} alt="project" className='text-white object-cover'></Image></div>
+        <div className="p-4 bg-red-400"><Image src={"/cashback.png"} height={46} width={46} alt="project" className='text-white object-cover'></Image></div>
         <div className="px-4 text-gray-700">
             <h3 className="text-sm tracking-wider">Total Credit</h3>
             <p className="text-3xl">1000$</p>

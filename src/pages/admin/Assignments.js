@@ -3,11 +3,8 @@ import theme from "../../../trc/theme/theme";
 import FullLayout from "../../../trc/layouts/FullLayout";
 import { ThemeProvider } from "@mui/material/styles";
 import ComingSoon from './ComingSoon';
-
-const Chats = () => {
- 
+const Assignments = () => {
   return (
-    <>
       <ThemeProvider theme={theme}>
        <FullLayout>
        <style jsx global>{`
@@ -18,14 +15,11 @@ const Chats = () => {
           display:none;
         }
       `}</style>
-     
-       <div className='h-full w-full'>
-     </div>
-     <ComingSoon/>
-        </FullLayout>
+        <ComingSoon/>
+       </FullLayout>
       </ThemeProvider> 
-      </>
+ 
   )
 }
 
-export default Chats
+export default Assignments

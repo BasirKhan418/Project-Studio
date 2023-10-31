@@ -35,8 +35,8 @@ const Meeting = () => {
           const roomID = getUrlParams(window.location.href)['roomID'] || (Math.floor(Math.random() * 10000) + "");
           const userID = Math.floor(Math.random() * 10000) + "";
           const userName = "userName" + userID;
-          const appID = 292403469;
-          const serverSecret = "e02cddfeb69e46a308592a692dc36c43";
+          const appID = 2038963665;
+          const serverSecret = "f11bf9c6f33022873d04fb928f1a6ed1";
           const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(appID, serverSecret, roomID, userID, userName);
       
           const zp = ZegoUIKitPrebuilt.create(kitToken);
@@ -90,8 +90,8 @@ const Meeting = () => {
     const roomID = getUrlParams(window.location.href)['roomID'] || (Math.floor(Math.random() * 10000) + "");
     const userID = Math.floor(Math.random() * 10000) + "";
     const userName = "userName" + userID;
-    const appID = 292403469;
-    const serverSecret = "e02cddfeb69e46a308592a692dc36c43";
+    const appID = 2038963665;
+    const serverSecret = "f11bf9c6f33022873d04fb928f1a6ed1";
     const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(appID, serverSecret, roomID, userID, userName);
 
     const zp = ZegoUIKitPrebuilt.create(kitToken);
@@ -149,8 +149,8 @@ const Meeting = () => {
           const roomID = getUrlParams(window.location.href)['roomID'] || (Math.floor(Math.random() * 10000) + "");
           const userID = Math.floor(Math.random() * 10000) + "";
           const userName = "userName" + userID;
-          const appID = 292403469;
-          const serverSecret = "e02cddfeb69e46a308592a692dc36c43";
+          const appID = 2038963665;
+          const serverSecret = "f11bf9c6f33022873d04fb928f1a6ed1";
           const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(appID, serverSecret, roomID, userID, userName);
       
           const zp = ZegoUIKitPrebuilt.create(kitToken);
