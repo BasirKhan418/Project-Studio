@@ -39,6 +39,10 @@ else{
         setLoading(false)
       const response=await res.json();
         if(response.success){
+            setName('')
+            setEmail('')
+            setMessage('')
+            
             toast.success('Message sent successfully')
         }
         else{
