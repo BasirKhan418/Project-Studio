@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import toast,{Toaster} from 'react-hot-toast'
 const NewsLater = () => {
     const[name,setName]=useState('')
     const[email,setEmail]=useState('')
@@ -16,11 +16,39 @@ const NewsLater = () => {
             setMessage(e.target.value)
         }
     }
-const handleSubmit=(e)=>{
-
+const handleSubmit=async()=>{
+if(name.length<3){
+    toast.error('Name must be atleast 3 characters long')
+}
+else if(email.includes('@')==false||email.includes('.')==false){
+    toast.error('Invalid Email')
+}
+else if(message.length<10){
+    toast.error('Message must be atleast 10 characters long')
+}
+else{
+    setLoading(true)
+    const data={name,email,message}
+    const res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/contact`, {
+        method: "POST", // or 'PUT'
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+        setLoading(false)
+      const response=await res.json();
+        if(response.success){
+            toast.success('Message sent successfully')
+        }
+        else{
+            toast.error('Something went wrong')
+        }
+}
 }
   return (
     <section className="min-h-screen ">
+    <Toaster/>
     <div className="container flex flex-col min-h-screen px-6 py-12 mx-auto bg-black">
         <div className="flex-1 lg:flex lg:items-center lg:-mx-6">
             <div className="text-white lg:w-1/2 lg:mx-6">
@@ -111,7 +139,7 @@ const handleSubmit=(e)=>{
                         </div>
 
                         <button className="w-full px-6 py-3 mt-6 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-400 focus:ring-opacity-50" onClick={handleSubmit}>
-                            get in touch
+                          {loading?'Loading...':'Get in touch'}
                         </button>
                     </div>
                 </div>
