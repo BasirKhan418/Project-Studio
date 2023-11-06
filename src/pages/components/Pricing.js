@@ -1,9 +1,9 @@
 import React from 'react'
-
+import { motion } from 'framer-motion'
 const Pricing = () => {
   return (
     <>
-      <section className="bg-black" id='price'>
+      <motion.section className="bg-black" id='price' initial={{opacity:0,y:200}} whileInView={{opacity:1 ,y:0}} transition={{duration:1}}>
   <div className="py-6 px-4 mx-auto max-w-screen-xl lg:py-6 lg:px-6">
       <div className="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
           <h2 className="mb-4 text-4xl tracking-tight  text-white font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-950">Our Pricing Plans</h2>
@@ -130,7 +130,7 @@ const Pricing = () => {
           </div>
       </div>
   </div>
-</section>
+</motion.section>
     </>
   )
 }

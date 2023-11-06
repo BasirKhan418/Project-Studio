@@ -1,6 +1,8 @@
 import React from 'react'
 import AnaDetail from './AnaDetail'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
+import { AnimatePresence } from 'framer-motion'
 const Analytics = () => {
   return (
     <div>
@@ -19,7 +21,8 @@ const Analytics = () => {
                 <div className="px-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
       <div className="grid gap-5 row-gap-8 lg:grid-cols-2">
         <div className="flex flex-col justify-center">
-          <div className="max-w-xl mb-6">
+          <AnimatePresence mode="wait" initial={false}>
+          <motion.div className="max-w-xl mb-6" initial={{opacity:0,x:-200}} whileInView={{opacity:1,x:0}} transition={{duration:1}}>
             <div>
               <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-white uppercase rounded-full bg-green-600">
                 Brand new
@@ -40,7 +43,8 @@ const Analytics = () => {
             Hey there, folks! we are diving into the world of project management where we provide how to showcase your projects using a dashboard.
 
             </p>
-          </div>
+          </motion.div>
+          </AnimatePresence>
           <Link href={"/components/AnaDetail"}><button
             href="/"
             aria-label=""
@@ -58,7 +62,8 @@ const Analytics = () => {
           </button>
           </Link>
         </div>
-        <div className="relative">
+<AnimatePresence mode="wait" initial={false}>
+        <motion.div className="relative" initial={{opacity:0,x:200}} whileInView={{opacity:1,x:0}} transition={{duration:1}}>
           <svg
             className="absolute w-full text-green-600"
             fill="currentColor"
@@ -83,7 +88,8 @@ const Analytics = () => {
             <rect x="420" y="205" width="75" height="187" rx="8" />
             <rect x="315" y="83" width="75" height="309" rx="8" />
           </svg>
-        </div>
+        </motion.div>
+        </AnimatePresence>
       </div>
     </div>
                 </section>

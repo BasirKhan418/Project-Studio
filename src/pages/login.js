@@ -7,6 +7,7 @@ import Spinner from './components/Spinner';
 import Image from 'next/image';
 import { AiFillEye } from "react-icons/ai";
 import { AiFillEyeInvisible } from "react-icons/ai";
+import { motion } from 'framer-motion';
 import Head from 'next/head';
 // import { useMyContext } from '../context/Allstate';
 const Login = () => {
@@ -167,7 +168,7 @@ setPassword(e.target.value)
                             Password
                           </label>
                           <Link
-                            href={"/Forgot"}
+                            href={"/forgot"}
                             className="text-sm text-gray-400 focus:text-blue-500 hover:text-blue-500 hover:underline"
                           >
                             Forgot password?
@@ -200,12 +201,14 @@ setPassword(e.target.value)
                         )}
                       </div>
                       <div className="mt-6 ">
-                        <button
+                        <motion.button
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
                           onClick={handleSubmit}
                           className=" w-full px-4 py-2 tracking-wide text-white transition-colors duration-300 transform bg-purple-600 rounded-lg hover:bg-purple-800 focus:outline-none focus:bg-green-400 focus:ring focus:ring-green-300 focus:ring-opacity-50"
                         >
                           Sign in
-                        </button>
+                        </motion.button>
                       </div>
                       <div className="">
                         <p className="mt-4 text-center text-gray-200 dark:text-gray-400">

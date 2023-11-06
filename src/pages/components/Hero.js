@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { set } from "mongoose";
 import { useEffect } from "react";
+import { motion } from "framer-motion";
 const Hero = () => {
   const [console,setConsole]=useState(false);
   useEffect(()=>{
@@ -45,20 +46,23 @@ const Hero = () => {
         <section className="pt-12 bg-none sm:pt-16 ">
           <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div className="max-w-2xl mx-auto text-center ">
-              <h1 className="px-6 lg:text-lg text-gray-200 sm:text-sm text-sm">
+              <motion.h1 className="px-6 lg:text-lg text-gray-200 sm:text-sm text-sm" initial={{opacity:0,y:-500}} animate={{opacity:1,y:0}}
+              transition={{duration:0.5}}
+              >
                 Welcome to Project Studio 🧑‍💻
-              </h1>
-              <p className="mt-5  hero-text font-bold leading-tight text-white sm:leading-tight sm:text-5xl lg:text-6xl lg:leading-normal text-2xl">
+              </motion.h1>
+              <motion.p className="mt-5  hero-text font-bold leading-tight text-white sm:leading-tight sm:text-5xl lg:text-6xl lg:leading-normal text-2xl" initial={{opacity:0,y:-500}} animate={{opacity:1,y:0}}
+              transition={{duration:0.5}}>
                 One Stop Solution For
                 {/* <span className="bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] blur-lg filter opacity-30 w-full h-full absolute inset-0"></span> */}
                 <span className="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-transparent bg-clip-text">
                   {" "}
                   Project Mangement{" "}
                 </span>
-              </p>
+              </motion.p>
 
               <div className="px-8 sm:items-center sm:justify-center sm:px-0 sm:space-x-5 sm:flex mt-9">
-                <Link
+                <motion.div whileHover={{scale:1.05 }} whileTap={{scale:0.95}} transition={{duration:0.2}}><Link
                   href="/docs/Alldocs"
                   title=""
                   className="inline-flex  items-center justify-center w-full px-8 py-3 text-lg font-bold text-white transition-all duration-200 bg-purple-600 border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-purple-950 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900"
@@ -66,7 +70,7 @@ const Hero = () => {
                 >
                   Explore More
                 </Link>
-
+                </motion.div>
                  {!console&&<Link 
                   href="/signup"
                   title=""
@@ -77,7 +81,7 @@ const Hero = () => {
                   Get Started
                   <Image src="/getstarted.png" alt="getstarted png" width={20} height={20} className="mx-2"/>
                 </Link>} 
-                {console&&<Link 
+                {console&&<motion.div whileHover={{scale:1.05 }} whileTap={{scale:0.95}} transition={{duration:0.2}}><Link 
                   href="/admin"
                   title=""
                   className="inline-flex items-center justify-center w-full px-6 py-3 mt-4 text-lg font-bold text-gray-200 transition-all duration-200 border-2 border-gray-400 sm:w-auto sm:mt-0 rounded-xl font-pj focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 hover:bg-gray-900 focus:bg-gray-900 hover:text-white focus:text-white hover:border-gray-900 focus:border-gray-900"
@@ -86,7 +90,7 @@ const Hero = () => {
                  
                   Go to Console
                   <Image src="/getstarted.png" alt="getstarted png" width={20} height={20} className="mx-2"/>
-                </Link>}
+                </Link></motion.div>}
               </div>
             </div>
           </div>
@@ -99,9 +103,11 @@ const Hero = () => {
         <span className="relative w-3 h-3 border-2 rounded-full border-green-400"></span>
        
     </div>
-    <div className="relative bg-blue-600 border-t-0 w-full h-auto border-blue-900">
+    <motion.div className="relative bg-blue-600 border-t-0 w-full h-auto border-blue-900" initial={{x:-200,opacity:0}} animate={{opacity:1,x:0}}
+    duration={{duration:2}}
+    >
         <img src="https://res.cloudinary.com/dawzncoau/image/upload/v1699282604/dashboard_z7bik7.png" alt=""  className=""/>
-    </div>
+    </motion.div>
 </div>
         </section>
       </div>

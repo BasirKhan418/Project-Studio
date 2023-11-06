@@ -1,8 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 const Cta = () => {
   return (
-    <div>
+    <motion.div initial={{opacity:0,y:200}} whileInView={{opacity:1 ,y:0}} transition={{duration:1}}>
       <section className="py-2">
      
 <div className="bg-gradient-to-r from-red-500 via-purple-400 to-blue-500">
@@ -31,7 +32,7 @@ const Cta = () => {
 </div>
 
       </section>
-    </div>
+    </motion.div>
   )
 }
 

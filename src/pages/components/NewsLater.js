@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import toast,{Toaster} from 'react-hot-toast'
+import { motion } from 'framer-motion'
 const NewsLater = () => {
     const[name,setName]=useState('')
     const[email,setEmail]=useState('')
@@ -42,7 +43,7 @@ else{
             setName('')
             setEmail('')
             setMessage('')
-            
+
             toast.success('Message sent successfully')
         }
         else{
@@ -51,7 +52,7 @@ else{
 }
 }
   return (
-    <section className="min-h-screen ">
+    <motion.section className="min-h-screen " initial={{opacity:0,y:200}} whileInView={{opacity:1 ,y:0}} transition={{duration:1}}>
     <Toaster/>
     <div className="container flex flex-col min-h-screen px-6 py-12 mx-auto bg-black">
         <div className="flex-1 lg:flex lg:items-center lg:-mx-6">
@@ -150,7 +151,7 @@ else{
             </div>
         </div>
     </div>
-</section>
+</motion.section>
 
   )
 }

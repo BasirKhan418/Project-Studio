@@ -2,12 +2,12 @@ import React from 'react'
 
 import { GiArtificialIntelligence } from 'react-icons/gi';
 import { FcCollaboration} from 'react-icons/fc';
-
+import { motion } from 'framer-motion';
 const Features = () => {
   return (
     <>
      
-<div className=" px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto" id="features">
+<motion.div className=" px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto" id="features" initial={{opacity:0,y:200}} whileInView={{opacity:1 ,y:0}} transition={{duration:1}}>
 
   <div className="mx-auto max-w-4xl mb-8 lg:mb-14 text-center">
     <h2 className="text-3xl lg:text-4xl font-bold text-gray-200">
@@ -73,7 +73,7 @@ const Features = () => {
     </div>
 
   </div>
-</div>
+</motion.div>
 
     </>
   )

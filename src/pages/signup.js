@@ -67,6 +67,19 @@ setNumber(e.target.value)
         theme: "light",
         });
     }
+    else if(email.includes('@')==false&&email.includes('.')==false){
+      toast.error("Please Enter Valid Email Address", {
+        position: "top-left",
+        autoClose: 1500,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
+
+    }
     else{
     setLoading(true)
         const data ={name,email:email.toLowerCase(),password,number,npassword};
@@ -239,7 +252,7 @@ theme="light"
           <h1 className="text-center text-2xl font-bold text-indigo-600 sm:text-3xl hidden lg:block">
         Create Your Account 
       </h1>
-          <form  className="mt-8 grid grid-cols-6 gap-6">
+          <div  className="mt-8 grid grid-cols-6 gap-6">
             
             <div className="col-span-6 ">
               <label
@@ -348,7 +361,7 @@ theme="light"
                 .
               </p>
             </div>
-          </form>
+          </div>
         </div>
       </main>
     </div>

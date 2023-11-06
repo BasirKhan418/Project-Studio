@@ -1,8 +1,8 @@
 import React from 'react'
-
+import { motion } from 'framer-motion'
 const Services2 = () => {
   return (
-    <div>
+    <motion.div initial={{opacity:0,y:200}} whileInView={{opacity:1 ,y:0}} transition={{duration:1}}>
       <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
  
   <nav className="max-w-6xl mx-auto grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-4" aria-label="Tabs" role="tablist">
@@ -77,7 +77,7 @@ const Services2 = () => {
     </div>
     </div>
     
-    </div>
+    </motion.div>
     
   )
 }

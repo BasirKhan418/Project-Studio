@@ -1,8 +1,10 @@
 import React from 'react'
-
+import { motion } from 'framer-motion'
+import { AnimatePresence } from 'framer-motion'
 const Blog = () => {
   return (
-    <div>
+    <AnimatePresence mode='wait'  initial={false}>
+    <motion.div initial={{opacity:0,y:200}} whileInView={{opacity:1 ,y:0}} transition={{duration:1}}>
     
 <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
   
@@ -86,7 +88,8 @@ const Blog = () => {
 
 </div>
 
-    </div>
+    </motion.div>
+    </AnimatePresence>
   )
 }
 
