@@ -28,47 +28,47 @@ const Blog = () => {
       <div className="mt-auto flex items-center gap-x-3">
         <img className="w-8 h-8 rounded-full" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Image Description"/>
         <div>
-          <h5 className="text-sm text-gray-200">By Lauren Waller</h5>
+          <h5 className="text-sm text-gray-200">By Smrutirupa Parida</h5>
         </div>
       </div>
     </a>
    
     <a className="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg transition-all duration-300 rounded-xl p-5 dark:border-gray-700 dark:hover:border-transparent dark:hover:shadow-black/[.4]" href="#">
       <div className="aspect-w-16 aspect-h-11">
-        <img className="w-full object-cover rounded-xl" src="https://images.unsplash.com/photo-1562851529-c370841f6536?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3540&q=80" alt="Image Description"/>
+        <img className="w-full object-cover rounded-xl h-60" src="https://res.cloudinary.com/dawzncoau/image/upload/v1699280375/s1_wt4qsn.jpg" alt="Image Description"/>
       </div>
       <div className="my-6">
         <h3 className="text-xl font-semibold text-gray-300 dark:group-hover:text-white">
-          How Google Assistant now helps you record stories for kids
+          How to use Project Studio for your business ?
         </h3>
         <p className="mt-5 text-gray-400">
-          Google is constantly updating its consumer AI, Google Assistant, with new features.
+          Project Studio is a powerful tool for your business.
         </p>
       </div>
       <div className="mt-auto flex items-center gap-x-3">
-        <img className="w-8 h-8 rounded-full" src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Image Description"/>
+        <img className="w-8 h-8 rounded-full" src="https://res.cloudinary.com/dawzncoau/image/upload/v1699280375/s1_wt4qsn.jpg" alt="Image Description"/>
         <div>
-          <h5 className="text-sm text-gray-200">By Aaron Larsson</h5>
+          <h5 className="text-sm text-gray-200">By Nayaybrata Das</h5>
         </div>
       </div>
     </a>
  
     <a className="group flex flex-col h-full border border-gray-200 hover:border-transparent hover:shadow-lg transition-all duration-300 rounded-xl p-5 dark:border-gray-700 dark:hover:border-transparent dark:hover:shadow-black/[.4]" href="#">
       <div className="aspect-w-16 aspect-h-11">
-        <img className="w-full object-cover rounded-xl" src="https://images.unsplash.com/photo-1521321205814-9d673c65c167?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3548&q=80" alt="Image Description"/>
+        <img className="w-full object-cover rounded-xl" src="https://res.cloudinary.com/dawzncoau/image/upload/v1699277227/teamwork_uvajg8.jpg" alt="Image Description"/>
       </div>
       <div className="my-6">
         <h3 className="text-xl font-semibold text-gray-300 dark:group-hover:text-white">
-          Front accounts - lets work together
+          How to use Project Studio for your Study Projects ?
         </h3>
         <p className="mt-5 text-gray-400">
-          Are you an accountant? Are you a company formation advisor?
+          Project Studio is a powerful tool for your Study Projects. 
         </p>
       </div>
       <div className="mt-auto flex items-center gap-x-3">
         <img className="w-8 h-8 rounded-full" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Image Description"/>
         <div>
-          <h5 className="text-sm text-gray-200">By Lauren Waller</h5>
+          <h5 className="text-sm text-gray-200">By Rudra Prasad Baral</h5>
         </div>
       </div>
     </a>

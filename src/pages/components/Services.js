@@ -22,7 +22,7 @@ const Services = () => {
               </svg>
               <span className="grow ml-6">
                 <span className="block text-lg font-semibold hs-tab-active:text-blue-600  dark:hs-tab-active:text-blue-500 text-gray-200">Advanced tools</span>
-                <span className="block mt-1 text-gray-200 dark:hs-tab-active:text-gray-200 dark:text-gray-200">Use Preline thoroughly thought and automated libraries to manage your businesses.</span>
+                <span className="block mt-1 text-gray-200 dark:hs-tab-active:text-gray-200 dark:text-gray-200">Unlock your projects full potential with advanced management tools – streamlining tasks, boosting productivity, and ensuring success at every step. Elevate your projects to new heights .</span>
               </span>
             </span>
           </button>
@@ -34,7 +34,7 @@ const Services = () => {
               </svg>
               <span className="grow ml-6">
                 <span className="block text-lg font-semibold hs-tab-active:text-blue-600 dark:hs-tab-active:text-blue-500 text-gray-200">Smart dashboards</span>
-                <span className="block mt-1 dark:hs-tab-active:text-gray-200 text-gray-200">Quickly Preline sample components, copy-paste codes, and start right off.</span>
+                <span className="block mt-1 dark:hs-tab-active:text-gray-200 text-gray-200">Experience project management redefined with our smart dashboard. It is your gateway to streamlined success - efficiency, insights, and control all at your fingertips. Elevate your projects, the smart way!</span>
               </span>
             </span>
           </button>
@@ -46,7 +46,7 @@ const Services = () => {
               </svg>
               <span className="grow ml-6">
                 <span className="block text-lg font-semibold hs-tab-active:text-blue-600  dark:hs-tab-active:text-blue-500 text-gray-200">Powerful features</span>
-                <span className="block mt-1 dark:hs-tab-active:text-gray-200 text-gray-200">Reduce time and effort on building modern look design with Preline only.</span>
+                <span className="block mt-1 dark:hs-tab-active:text-gray-200 text-gray-200">Empower your projects with our dynamic features. Stay organized, collaborate effortlessly, and drive success with ease. Unleash the power of effective project management, now at your fingertips!</span>
               </span>
             </span>
           </button>
@@ -59,11 +59,11 @@ const Services = () => {
     
           <div>
             <div id="tabs-with-card-1" role="tabpanel" aria-labelledby="tabs-with-card-item-1">
-              <img className="shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/[.2]" src="https://images.unsplash.com/photo-1605629921711-2f6b00c6bbf4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&h=1220&q=80" alt="Image Description"/>
+              <img className="shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/[.2]" src="https://res.cloudinary.com/dawzncoau/image/upload/v1699279431/7007591_wgwp20.jpg" alt="Image Description" alt="Image Description"/>
             </div>
 
             <div id="tabs-with-card-2" className="hidden" role="tabpanel" aria-labelledby="tabs-with-card-item-2">
-              <img className="shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/[.2]" src="https://images.unsplash.com/photo-1665686306574-1ace09918530?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&h=1220&q=80" alt="Image Description"/>
+              <img className="shadow-xl shadow-gray-200 rounded-xl dark:shadow-gray-900/[.2]" src="https://res.cloudinary.com/dawzncoau/image/upload/v1699282604/dashboard_z7bik7.png" alt="Image Description"/>
             </div>
 
             <div id="tabs-with-card-3" className="hidden" role="tabpanel" aria-labelledby="tabs-with-card-item-3">

@@ -42,6 +42,7 @@ setNumber(e.target.value)
   
   
   const handleSubmit=async()=>{
+   
     if(password!=npassword){
       toast.error("Password and confirm password didnot match .", {
         position: "top-left",
@@ -68,8 +69,9 @@ setNumber(e.target.value)
     }
     else{
     setLoading(true)
-        const data ={name,email,password,number,npassword};
+        const data ={name,email:email.toLowerCase(),password,number,npassword};
         console.log(data)
+        
     const res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/signup`, {
       method: "POST", // or 'PUT'
       headers: {
@@ -226,7 +228,7 @@ theme="light"
       `}</style>
 
       <div className="">
-        <img src="/sphere.webp" className=" animate-img w-100 h-full" />
+        <img src="/sphere.webp" className=" animate-img w-100 h-full hidden lg:block md:block" />
         </div>
   <section className="bg-none">
     

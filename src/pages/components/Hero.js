@@ -100,7 +100,7 @@ const Hero = () => {
        
     </div>
     <div className="relative bg-blue-600 border-t-0 w-full h-auto border-blue-900">
-        <img src="https://res.cloudinary.com/dawzncoau/image/upload/v1696520978/psdashboard_dgfkc8.png" alt="" />
+        <img src="https://res.cloudinary.com/dawzncoau/image/upload/v1699282604/dashboard_z7bik7.png" alt=""  className=""/>
     </div>
 </div>
         </section>

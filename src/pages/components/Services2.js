@@ -66,7 +66,7 @@ const Services2 = () => {
           </div>
 
           <div className="bg-gray-800 rounded-b-lg">
-            <img className="max-w-full h-auto rounded-b-lg" src="https://res.cloudinary.com/dawzncoau/image/upload/v1695495381/admin_x71phl.png" alt="Image Description"/>
+            <img className="max-w-full h-auto rounded-b-lg" src="https://res.cloudinary.com/dawzncoau/image/upload/v1699282604/dashboard_z7bik7.png" alt="Image Description"/>
           </div>
         </figure>
     

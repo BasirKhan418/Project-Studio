@@ -1,5 +1,6 @@
 import React from 'react'
-
+import AnaDetail from './AnaDetail'
+import Link from 'next/link'
 const Analytics = () => {
   return (
     <div>
@@ -25,20 +26,22 @@ const Analytics = () => {
               </p>
             </div>
             <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
-              Innovative analytics
+            Elevate Your Project Management Game with Our 
               <br className="hidden md:block" />
-              that you{' '}
+              {' '}
               <span className="inline-block text-purple-700">
-                will love
+              Dashboard Delight!
               </span>
             </h2>
+            <p>
+              
+            </p>
             <p className="text-base text-white md:text-lg">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-              quae. explicabo.
+            Hey there, folks! we are diving into the world of project management where we provide how to showcase your projects using a dashboard.
+
             </p>
           </div>
-          <button
+          <Link href={"/components/AnaDetail"}><button
             href="/"
             aria-label=""
             className="inline-flex items-center font-semibold transition-colors duration-200 text-purple-400
@@ -53,6 +56,7 @@ const Analytics = () => {
               <path d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z" />
             </svg>
           </button>
+          </Link>
         </div>
         <div className="relative">
           <svg

@@ -32,10 +32,9 @@ setPassword(e.target.value)
   }
   const handleSubmit=async()=>{
     setLoading(true)
-    console.log(email,password)
       if(email.length
         !=0&&password.length!=0){
-        const data ={email,password};
+        const data ={email:email.toLowerCase(),password};
         console.log(password);
     const res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/login`, {
       method: "POST", // or 'PUT'
@@ -114,7 +113,7 @@ setPassword(e.target.value)
       `}</style>
 
       <div className="">
-        <img src="/sphere.webp" className=" animate-img w-100 h-full" />
+        <img src="/sphere.webp" className=" animate-img w-100 h-full hidden lg:block md:block" />
         <div>
           <Toaster />
           {loading ? (

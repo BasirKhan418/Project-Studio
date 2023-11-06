@@ -1,12 +1,15 @@
 import React from 'react'
 
+import { GiArtificialIntelligence } from 'react-icons/gi';
+import { FcCollaboration} from 'react-icons/fc';
+
 const Features = () => {
   return (
     <>
      
-<div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto" id="features">
+<div className=" px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto" id="features">
 
-  <div className="mx-auto max-w-2xl mb-8 lg:mb-14 text-center">
+  <div className="mx-auto max-w-4xl mb-8 lg:mb-14 text-center">
     <h2 className="text-3xl lg:text-4xl font-bold text-gray-200">
       Explore tools
     </h2>
@@ -20,13 +23,10 @@ const Features = () => {
   <div className="mx-auto max-w-3xl grid grid-cols-12 gap-6 lg:gap-8">
   
     <div className="col-span-6 sm:col-span-4 text-center">
-      <svg className="mx-auto h-auto w-7 md:w-9 text-gray-200" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-        <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z"/>
-        <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
-      </svg>
+    <GiArtificialIntelligence className='mx-auto h-auto w-7 md:w-9 text-gray-200'/>
       <div className="mt-2 sm:mt-6">
         <h3 className="text-lg font-semibold text-gray-200">
-          Responsive
+          AI/ML
         </h3>
       </div>
     </div>
@@ -45,13 +45,10 @@ const Features = () => {
     </div>
   
     <div className="col-span-6 col-start-4 sm:col-span-4 text-center">
-      <svg className="mx-auto h-auto w-7 md:w-9 text-gray-200" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-        <path d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1H2zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z"/>
-        <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
-      </svg>
+    <FcCollaboration className='mx-auto h-auto w-7 md:w-9 text-gray-200'/>
       <div className="mt-2 sm:mt-6">
         <h3 className="text-lg font-semibold text-gray-200">
-          24/7 Support
+          Collabration
         </h3>
       </div>
     </div>
@@ -60,19 +57,19 @@ const Features = () => {
   
   <div className="mt-20 grid grid-cols-12 items-center gap-x-2 sm:gap-x-6 lg:gap-x-8">
     <div className="hidden md:block col-span-4 md:col-span-3">
-      <img className="rounded-xl" src="https://images.unsplash.com/photo-1606868306217-dbf5046868d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1981&q=80" alt="Image Description"/>
+      <img className="rounded-xl object-cover " src="https://res.cloudinary.com/dawzncoau/image/upload/v1699280375/s1_wt4qsn.jpg" alt="Image Description"/>
     </div>
 
     <div className="col-span-4 md:col-span-3">
-      <img className="rounded-xl" src="https://images.unsplash.com/photo-1587613991119-fbbe8e90531d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1003&q=80" alt="Image Description"/>
+      <img className="rounded-xl " src="https://images.unsplash.com/photo-1587613991119-fbbe8e90531d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1003&q=80" alt="Image Description"/>
     </div>
     <div className="col-span-4 md:col-span-3">
-      <img className="rounded-xl" src="https://images.unsplash.com/photo-1554295405-abb8fd54f153?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=652&q=80" alt="Image Description"/>
+      <img className="rounded-xl h-[70vh] object-cover" src="https://res.cloudinary.com/dawzncoau/image/upload/v1699280387/s2_ziq9xg.jpg" alt="Image Description"/>
     </div>
  
 
     <div className="col-span-4 md:col-span-3">
-      <img className="rounded-xl" src="https://images.unsplash.com/photo-1640622300473-977435c38c04?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80" alt="Image Description"/>
+      <img className="rounded-xl h-[40vh]" src="https://res.cloudinary.com/dawzncoau/image/upload/v1699280373/image_for_how_to_use_jygd1t.jpg" alt="Image Description"/>
     </div>
 
   </div>
