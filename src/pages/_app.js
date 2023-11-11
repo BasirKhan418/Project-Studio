@@ -1,15 +1,20 @@
 import '../styles/globals.css'
 import Navabar from './components/Navabar'
+import { usePathname } from 'next/navigation'
 import LoadingBar from 'react-top-loading-bar'
 import Footer from './components/Footer'
 import { useEffect } from 'react'
-import { useState } from 'react'
+import { useState } from 'react';
+import { motion } from 'framer-motion';
 import Router, { useRouter } from 'next/router'
 import { Provider } from 'react-redux'
 import toast, { Toaster } from 'react-hot-toast'
-import Storedetails from '../store/Storedetails'
+import Storedetails from '../store/Storedetails';
+import { AnimatePresence } from 'framer-motion'
 export default function App({ Component, pageProps }) {
+  const pathname = usePathname()
   const router=useRouter();
+ 
   const [progress, setProgress] = useState(0)
   const [key , setKey] = useState(0)
   const [user,setUser]=useState(false);
@@ -41,10 +46,14 @@ export default function App({ Component, pageProps }) {
     },1000);
     setUser(false);
   }
-  return <> <Provider store={Storedetails}><LoadingBar
+  return <>      <AnimatePresence
+  mode="wait"
+  initial={false}
+  onExitComplete={() => window.scrollTo(0, 0)}
+>  <Provider store={Storedetails}><LoadingBar
   color='blue'
   waitingTime={400}
   progress={progress}
   onLoaderFinished={() => setProgress(0)}
-/><Navabar key={key} logout={logout} user={user} /><Component {...pageProps} /> <Footer/> </Provider></>
+/><Navabar key={key} logout={logout} user={user} /><Component {...pageProps} /> <Footer/> </Provider> </AnimatePresence></>
 }

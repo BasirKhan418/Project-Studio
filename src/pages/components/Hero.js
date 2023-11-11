@@ -5,6 +5,7 @@ import { useState } from "react";
 import { set } from "mongoose";
 import { useEffect } from "react";
 import { motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 const Hero = () => {
   const [console,setConsole]=useState(false);
   useEffect(()=>{
@@ -43,9 +44,11 @@ const Hero = () => {
           }
         `}</style>
 
-        <section className="pt-12 bg-none sm:pt-16 ">
+        <section className="pt-12 bg-none sm:pt-16 w-[100vw]">
+      
           <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div className="max-w-2xl mx-auto text-center ">
+             
               <motion.h1 className="px-6 lg:text-lg text-gray-200 sm:text-sm text-sm" initial={{opacity:0,y:-500}} animate={{opacity:1,y:0}}
               transition={{duration:0.5}}
               >
@@ -108,6 +111,7 @@ const Hero = () => {
     >
         <img src="https://res.cloudinary.com/dawzncoau/image/upload/v1699282604/dashboard_z7bik7.png" alt=""  className=""/>
     </motion.div>
+
 </div>
         </section>
       </div>
