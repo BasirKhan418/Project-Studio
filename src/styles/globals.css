@@ -110,4 +110,8 @@ scroll-behavior: smooth;
           transform: translateX(100%);
         }
       }
-      
+      *{
+        scroll-behavior: smooth;
+        margin: 0;
+        padding: 0;
+      }

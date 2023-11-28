@@ -66,14 +66,14 @@ const Navbar = () => {
             <div className="flex flex-col gap-y-4 gap-x-0 mt-5 md:flex-row md:items-center md:justify-end md:gap-y-0 md:gap-x-7 md:mt-0 md:pl-7">
               <Link
                 className="font-medium text-white md:py-6 dark:text-white"
-                href="#features"
+                href="/#features"
                 aria-current="page"
               >
                 Features
               </Link>
               <Link
                 className="font-medium text-white md:py-6 dark:text-white"
-                href="#services"
+                href="/#services"
                 aria-current="page"
               >
                 Services
@@ -81,7 +81,7 @@ const Navbar = () => {
 
               <Link
                 className="font-medium text-white hover:text-white md:py-6 dark:text-gray-white"
-                href="#price"
+                href="/#price"
               >
                 Pricing
               </Link>
@@ -94,7 +94,7 @@ const Navbar = () => {
               </Link>
               <Link
                 className="font-medium text-white hover:text-white md:py-6 dark:text-gray-white "
-                href="#team"
+                href="/#team"
               >
                 Team
               </Link>
