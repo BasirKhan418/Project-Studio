@@ -44,17 +44,17 @@ const Todo = () => {
   const handleCloseconfirm = () => setOpenconfirm(false);
   // useeffect for getting user data from localstorage;
   useEffect(()=>{
-  
-    const myprappuser = JSON.parse(localStorage.getItem('myprappuser'))
-        // dispatch(fetchUser(myprappuser.token));
+  //disabled for contribution
+    // const myprappuser = JSON.parse(localStorage.getItem('myprappuser'))
+    //     // dispatch(fetchUser(myprappuser.token));
 
-    console.log();
-    if(UserDataSelector.id.length!=0){
-      getallTodo(UserDataSelector.id);
-    }
-    else{
-      dispatch(fetchUser(myprappuser.token));
-    }
+    // console.log();
+    // if(UserDataSelector.id.length!=0){
+    //   getallTodo(UserDataSelector.id);
+    // }
+    // else{
+    //   dispatch(fetchUser(myprappuser.token));
+    // }
     // getallTodo(UserDataSelector.id);
   },[])
 
