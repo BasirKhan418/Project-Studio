@@ -20,6 +20,7 @@ body {
 scroll-behavior: smooth;
 overflow-x: hidden;
 }
+
 @media(max-width: 992px){
  .res{
  
