@@ -29,9 +29,9 @@ const Hero = () => {
         style={{
           animationDuration: "5s",
         }}
-        className="absolute w-[300px] h-[400px] md:w-[700px] md:h-[800px] md:animate-spin rounded-full -top-1/2 left-0 md:left-60 bg-gradient-to-r from-slate-900 via-purple-900/60 to-slate-900 -z-50 blur-3xl"
+        className="absolute lg:w-[600px] lg:h-[700px] lg:-top-60 md:w-[350px] md:h-[400px] md:animate-spin rounded-full -top-1/2 md:top-0 left-0 md:left-72 bg-gradient-to-r from-slate-900 via-purple-900/60 to-slate-900 -z-50 blur-3xl"
       ></div>
-      <div className="overflow-x-hidden bg-none relative">
+      <div className="overflow-hidden bg-none relative">
         <style jsx global>{`
           @import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Lato:ital,wght@1,900&family=Martel+Sans:wght@200&family=Poppins&family=Ubuntu:wght@500&display=swap");
 
@@ -44,7 +44,7 @@ const Hero = () => {
           }
         `}</style>
 
-        <section className="pt-12 bg-none sm:pt-16 w-[100vw]">
+        <section className="pt-12 bg-none sm:pt-16 pl-10 pr-10 w-[100%]">
       
           <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div className="max-w-2xl mx-auto text-center ">
