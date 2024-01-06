@@ -19,7 +19,7 @@ const Index = () => {
       </Head>
       {/* adding overflow x hidden for small devices so the content don't overflow out of the screen. */}
 
-      <div className='sm:overflow-x-hidden md:overflow-x-auto overflow-auto'>
+      <div className='sm:overflow-x-hidden md:overflow-x-hidden overflow-auto'>
       <Hero/>
       <Analytics/>
   
