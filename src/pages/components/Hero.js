@@ -17,7 +17,7 @@ const Hero = () => {
         }
   })
   return (
-    <div>
+    <div className="overflow-hidden">
         
         <img
         className="absolute top-0 left-0"

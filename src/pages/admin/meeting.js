@@ -14,11 +14,10 @@ const Meeting = () => {
   const dispatch = useDispatch();
   const router= useRouter();
   useEffect(()=>{
-    //disabled for contribution
-    // if(userinfo.email==""){
-    //   const myprappuser = JSON.parse(localStorage.getItem('myprappuser'))
-    //   dispatch(fetchUser(myprappuser.token)); 
-    // }   
+    if(userinfo.email==""){
+      const myprappuser = JSON.parse(localStorage.getItem('myprappuser'))
+      dispatch(fetchUser(myprappuser.token)); 
+    }   
 },[])
     const [ham, setham]= useState(false);
     const [name,setName]=useState('');

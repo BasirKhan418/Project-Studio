@@ -13,7 +13,7 @@ import Blog from './components/Blog'
 const Index = () => {
 
   return (
-    <div>
+    <div className='overflow-hidden'>
       <Head>
         <title>Project-Management-App</title>
       </Head>

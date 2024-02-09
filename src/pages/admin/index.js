@@ -16,11 +16,10 @@ import Head from "next/head";
 export default function Index() {
 const dispatch = useDispatch();
   const router= useRouter();
-  //currently disabled for contribution
-//   useEffect(()=>{
-//     const myprappuser = JSON.parse(localStorage.getItem('myprappuser'))
-//   dispatch(fetchUser(myprappuser.token));   
-// },[])
+  useEffect(()=>{
+    const myprappuser = JSON.parse(localStorage.getItem('myprappuser'))
+  dispatch(fetchUser(myprappuser.token));   
+},[])
 const selector = useSelector((state) => state.userdata);
 // const getuser=async(token)=>{
 //     const data ={token:token};

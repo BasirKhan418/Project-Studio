@@ -45,17 +45,17 @@ const Todo = () => {
   // useeffect for getting user data from localstorage;
   useEffect(()=>{
   //disabled for contribution
-    // const myprappuser = JSON.parse(localStorage.getItem('myprappuser'))
-    //     // dispatch(fetchUser(myprappuser.token));
+    const myprappuser = JSON.parse(localStorage.getItem('myprappuser'))
+        dispatch(fetchUser(myprappuser.token));
 
-    // console.log();
-    // if(UserDataSelector.id.length!=0){
-    //   getallTodo(UserDataSelector.id);
-    // }
-    // else{
-    //   dispatch(fetchUser(myprappuser.token));
-    // }
-    // getallTodo(UserDataSelector.id);
+    console.log();
+    if(UserDataSelector.id.length!=0){
+      getallTodo(UserDataSelector.id);
+    }
+    else{
+      dispatch(fetchUser(myprappuser.token));
+    }
+    getallTodo(UserDataSelector.id);
   },[])
 
   //handlechange function starts here
