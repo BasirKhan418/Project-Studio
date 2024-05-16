@@ -31,7 +31,7 @@ const Index = () => {
       <Pricing/>
       <Cta/>
       
-      <Team/>
+      {/* <Team/> */}
       <div className=''>
         <h1 className='text-center text-4xl font-bold text-white '>Contact <span className='text-blue-600'>Us</span></h1>
         <div className='w-40 h-2 bg-indigo-600 rounded-full'>

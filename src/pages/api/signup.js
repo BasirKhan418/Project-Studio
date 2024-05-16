@@ -9,8 +9,8 @@ if(req.method=="POST"){
         port: 587,
         secure: false,
         auth: {
-          user: 'basirkhan4ukhanatoz@gmail.com',
-          pass: 'O1aXMRNItUmjprkD'
+            user: 'thebasirkhanofficial@gmail.com',
+            pass: 'bOTLR5E0phXVM2qm'
         }
       });
     let auser= await User.find({email:req.body.email});
