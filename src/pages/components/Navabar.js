@@ -63,16 +63,16 @@ const Navbar = () => {
             id="navbar-collapse-with-animation"
             className="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block"
           >
-            <div className="flex flex-col gap-y-4 gap-x-0 mt-5 md:flex-row md:items-center md:justify-end md:gap-y-0 md:gap-x-7 md:mt-0 md:pl-7">
+            <div className="flex flex-col  gap-y-4 gap-x-0 mt-5 md:flex-row md:items-center md:justify-end md:gap-y-0 md:gap-x-7 md:mt-0 md:pl-7">
               <Link
-                className="font-medium text-white md:py-6 dark:text-white"
+                className="font-medium hover:text-blue-600 text-white md:py-6 dark:text-white"
                 href="/#features"
                 aria-current="page"
               >
                 Features
               </Link>
               <Link
-                className="font-medium text-white md:py-6 dark:text-white"
+                className="font-medium hover:text-blue-600 text-white md:py-6 dark:text-white"
                 href="/#services"
                 aria-current="page"
               >
@@ -80,20 +80,20 @@ const Navbar = () => {
               </Link>
 
               <Link
-                className="font-medium text-white hover:text-white md:py-6 dark:text-gray-white"
+                className="font-medium hover:text-blue-600 text-white md:py-6 dark:text-gray-white"
                 href="/#price"
               >
                 Pricing
               </Link>
              
               <Link
-                className="font-medium text-white hover:text-white md:py-6 dark:text-gray-white "
+                className="font-medium hover:text-blue-600 text-white md:py-6 dark:text-gray-white "
                 href="/docs/Alldocs"
               >
                 Docs
               </Link>
               <Link
-                className="font-medium text-white hover:text-white md:py-6 dark:text-gray-white "
+                className="font-medium hover:text-blue-600 text-white md:py-6 dark:text-gray-white"
                 href="/#team"
               >
                 Team
