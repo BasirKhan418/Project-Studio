@@ -8,12 +8,12 @@ const handler = async (req, res) => {
   //check if the customer exists in the database or not
   if (req.body.sendMail == true) {
     const transporter = await nodemailer.createTransport({
-      host: "smtp-relay.brevo.com",
+      host: "smtp.gmail.com",
       port: 587,
       secure: false,
       auth: {
-        user: 'thebasirkhanofficial@gmail.com',
-        pass: 'bOTLR5E0phXVM2qm'
+        user: 'basirkhan4ukhanatoz@gmail.com',
+        pass: 'ppvy jemc zicl ughy'
       }
     });
     try{
@@ -30,7 +30,7 @@ const handler = async (req, res) => {
       });
       await forgot.save();
       const info = await transporter.sendMail({
-        from: '<support@Project-Studio.com>', // sender address
+        from: 'Project-Studio "<basirkhan4ukhanatoz@gmail.com>"', // sender address
         to: `${req.body.email}`, // list of receivers
         subject: `Otp For Password Reset`, // Subject line
         text: "Forgot Your Password", // plain text body
@@ -69,6 +69,7 @@ const handler = async (req, res) => {
       res.status(200).json({ success: true ,forgot});
     }
     catch(err){
+      console.error("Forgot password email error:", err);
       res.status(400).json({ success: false});
     }
     
@@ -92,8 +93,9 @@ const handler = async (req, res) => {
       res.status(400).json({ success: false, message: "Invalid Otp" });
     }
   }
-  catch{
-    res.status(400).json({ success: false ,message:"Something went wrong please try again after some time !"});
+  catch(err){
+    console.error("Forgot password error:", err);
+    res.status(400).json({ success: false ,message:"Something went wrong please try again after some time !", error: err.message });
   }
   
 }

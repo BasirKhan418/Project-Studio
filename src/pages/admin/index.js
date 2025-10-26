@@ -18,7 +18,13 @@ const dispatch = useDispatch();
   const router= useRouter();
   useEffect(()=>{
     const myprappuser = JSON.parse(localStorage.getItem('myprappuser'))
-  dispatch(fetchUser(myprappuser.token));   
+    if(!myprappuser){
+      router.push('/login');
+    }
+    else{
+dispatch(fetchUser(myprappuser.token)); 
+    }
+    
 },[])
 const selector = useSelector((state) => state.userdata);
 // const getuser=async(token)=>{

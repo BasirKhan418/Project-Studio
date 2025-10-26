@@ -5,14 +5,14 @@ const nodemailer = require("nodemailer");
 const handler = async (req, res) => {
 if(req.method=="POST"){
     const transporter = await nodemailer.createTransport({
-        host: "smtp-relay.brevo.com",
-        port: 587,
-        secure: false,
-        auth: {
-            user: 'thebasirkhanofficial@gmail.com',
-            pass: 'bOTLR5E0phXVM2qm'
-        }
-      });
+         host: "smtp.gmail.com",
+         port: 587,
+         secure: false,
+         auth: {
+           user: 'basirkhan4ukhanatoz@gmail.com',
+           pass: 'ppvy jemc zicl ughy'
+         }
+       });
     let auser= await User.find({email:req.body.email});
     let muser = await User.find({phone:req.body.number});
    if(auser.length>0){
